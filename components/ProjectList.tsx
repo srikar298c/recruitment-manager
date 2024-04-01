@@ -1,22 +1,25 @@
 import React from 'react'
 
 function ProjectList() {
-    const numberOfProjects = 5;
+    const numberOfProjects = 10;
     const projects = Array.from({ length: numberOfProjects }, (_, index) => `Project ${index + 1}`);
     return (
-        <div className="flex flex-col space-y-2.5 bg">
+        <div className="flex flex-col space-y-2.5 text-teal-800">
             <div className="flex items-center justify-between px-3 sm:px-0 ">
-                <p className=''>Projects</p>
+                <p className='text-3xl'>Projects</p>
             </div>
             <div className="">
-                <ul>
+                <ul style={{ width: '100%' }}>
                     {projects.map((projectName, index) => (
-                        <li key={index}>
-                            <a href={`/projects/${index + 1}`}>{projectName}</a>
+                        <li key={index} style={{ width: '100%' }}>
+                            <a href={`/projects/${index + 1}`} style={{ display: 'block', width: '100%', padding:'15px', }}>
+                                {projectName}
+                            </a>
                         </li>
                     ))}
                 </ul>
             </div>
+
         </div>
     )
 }
