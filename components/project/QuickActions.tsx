@@ -4,7 +4,7 @@ export default function QuickActions() {
   return (
    <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-lg font-bold mb-4">Quick Actions</h3>
-        <ul className="space-y-2">
+        <ul className="space-y-6">
           <li className="flex items-center">
             <span className="bg-teal-500 text-white rounded-full px-2 py-1 mr-2">O</span>
             <span>Add</span>
