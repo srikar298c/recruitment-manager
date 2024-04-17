@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const links = [
- { name: "Nurses", href: "/dashboard/nurses", icon: CheckCircle },
- { name: "School Teachers", href: "/dashboard/school-teachers", icon: CheckCircle },
+ { name: "Nurses", href: "/nurses/projects", icon: CheckCircle },
+ { name: "i", href: "/dashboard/school-teachers", icon: CheckCircle },
  { name: "Lecturers", href: "/dashboard/lecturers", icon: CheckCircle }, // corrected "lectureres" to "lecturers"
 ];
 

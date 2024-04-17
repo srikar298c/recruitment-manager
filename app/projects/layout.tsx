@@ -10,13 +10,13 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className='flex flex-row justify-between '>
+   <div className='flex flex-row justify-between '>
             < div className="flex absolute top-14 h-screen" >
                 <Header />
                 <div className="flex flex-grow">
                    <ProjectSideNav/>
                 </div>
-                <div className=" flex-grow  w-full  px-44 py-16  ">
+                <div className=" flex-grow  w-full px-10 py-8 ">
                     <FilterComponent/>
                 </div>
             </div >

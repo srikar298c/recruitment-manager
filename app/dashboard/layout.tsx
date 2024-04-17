@@ -15,9 +15,7 @@ export default function DashboardLayout({
                 <div className="flex flex-grow">
                     <SideNav />
                 </div>
-                <div className=" flex-grow   w-full  sm:p-6 md:p-12 max-w-7xl mx-auto ">
-                    <ProjectList/>
-                </div>
+              
             </div >
         </div>
     );
