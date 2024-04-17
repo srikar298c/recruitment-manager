@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import QuickActions from './QuickActions';
 
 
 const AcademicsForm: React.FC = () => {
@@ -335,7 +336,7 @@ const AcademicsForm: React.FC = () => {
             </form>
           </div>
           <div className="w-1/3">
-            {/* Quick Actions component */}
+            <QuickActions/>
           </div>
         </div>
       </div>
