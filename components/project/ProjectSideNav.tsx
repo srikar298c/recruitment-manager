@@ -1,13 +1,14 @@
-import NavLinks from "./Navlinks";
+import ProjectNavLinks from "./ProjectNavLinks";
 
-function SideNav() {
+
+function ProjectSideNav() {
     return (
         <div className="bg-teal-800 text-gray-100 flex flex-col">
             <nav className="p-9">
-                <NavLinks />
+                <ProjectNavLinks />
             </nav>
         </div>
     );
 }
 
-export default SideNav;
+export default ProjectSideNav;

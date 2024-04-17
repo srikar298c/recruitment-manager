@@ -1,9 +1,11 @@
 import React from 'react';
-import SideNav from "@/components/dashboard/DashboardSideNav";
 import Header from "@/components/Header";
-import ProjectList from '@/components/dashboard/ProjectList';
+import FilterComponent from '@/components/Projects/Enrollers';
+import ProjectSideNav from '@/components/project/ProjectSideNav';
+import CandidateDetails from '@/components/project/CanditateDetails';
 
-export default function DashboardLayout({
+
+export default function CanditatePageLayout({
     children,
 }: {
     children: React.ReactNode;
@@ -13,10 +15,10 @@ export default function DashboardLayout({
             < div className="flex absolute top-14 h-screen" >
                 <Header />
                 <div className="flex flex-grow">
-                    <SideNav />
+                   <ProjectSideNav/>
                 </div>
-                <div className=" flex-grow   w-full  sm:p-6 md:p-12 max-w-7xl mx-auto ">
-                    <ProjectList/>
+                <div className=" flex-grow  w-full px-10 py-8 ">
+                    <CandidateDetails/>
                 </div>
             </div >
         </div>

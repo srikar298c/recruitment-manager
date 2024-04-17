@@ -1,7 +1,8 @@
 import React from 'react';
-import SideNav from "@/components/dashboard/DashboardSideNav";
 import Header from "@/components/Header";
 import ProjectList from '@/components/dashboard/ProjectList';
+import ProjectSideNav from '@/components/Projects/ProjectsSideNav';
+import FilterComponent from '@/components/Projects/Enrollers';
 
 export default function DashboardLayout({
     children,
@@ -13,10 +14,10 @@ export default function DashboardLayout({
             < div className="flex absolute top-14 h-screen" >
                 <Header />
                 <div className="flex flex-grow">
-                    <SideNav />
+                   <ProjectSideNav/>
                 </div>
-                <div className=" flex-grow   w-full  sm:p-6 md:p-12 max-w-7xl mx-auto ">
-                    <ProjectList/>
+                <div className=" flex-grow  w-full  px-44 py-16  ">
+                    <FilterComponent/>
                 </div>
             </div >
         </div>
