@@ -12,15 +12,7 @@ const CandidateDetails = () => {
           facilisis ut. Faucibus nullam commodo hendrerit facilisi pretium gravida massa luctus in.
         </p>
 
-        <div className="flex mb-8">
-          <button className="bg-teal-500 text-white px-4 py-2 rounded-l-lg hover:bg-teal-600 focus:outline-none">
-            Demographics
-          </button>
-          <button className="bg-gray-300 px-4 py-2 hover:bg-gray-400 focus:outline-none">Academics</button>
-          <button className="bg-gray-300 px-4 py-2 hover:bg-gray-400 focus:outline-none">Interests</button>
-          <button className="bg-gray-300 px-4 py-2 hover:bg-gray-400 focus:outline-none">Documents</button>
-        </div>
-
+        
         <div>
           <div className="mb-4">
             <h3 className="text-lg font-bold mb-2">Personal Details</h3>
