@@ -26,12 +26,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className=" mx-auto">
+      <div className="flex justify-between">  <h2 className="text-xl font-bold mb-4">Name of the Candidate</h2>
+        <p className="mb-6">created by Admin 1 at 00:00 hrs</p></div>
+      
+
+        <p className="mb-8">
+          Lorem ipsum dolor sit amet consectetur. Maecenas dignissim a tortor lorem mattis. Aliquet quis malesuada neque nunc ac sem
+          facilisis ut. Faucibus nullam commodo hendrerit facilisi pretium gravida massa luctus in.
+        </p>
       <nav className="flex justify-center mb-6">
+        
         <button
           className={`px-4 py-2 rounded-md transition-colors duration-300 ${
             currentSection === 'demographics'
-              ? 'bg-indigo-600 text-white'
+              ? 'bg-teal-600 text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setCurrentSection('demographics')}
@@ -41,7 +50,7 @@ const App: React.FC = () => {
         <button
           className={`px-4 py-2 rounded-md transition-colors duration-300 ${
             currentSection === 'academics'
-              ? 'bg-indigo-600 text-white'
+              ? 'bg-teal-600 text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setCurrentSection('academics')}
@@ -51,7 +60,7 @@ const App: React.FC = () => {
         <button
           className={`px-4 py-2 rounded-md transition-colors duration-300 ${
             currentSection === 'interests'
-              ? 'bg-indigo-600 text-white'
+              ? 'bg-teal-600 text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setCurrentSection('interests')}
@@ -61,7 +70,7 @@ const App: React.FC = () => {
         <button
           className={`px-4 py-2 rounded-md transition-colors duration-300 ${
             currentSection === 'documents'
-              ? 'bg-indigo-600 text-white'
+              ? 'bg-teal-600 text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setCurrentSection('documents')}

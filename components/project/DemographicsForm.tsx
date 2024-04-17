@@ -5,14 +5,6 @@ const CandidateDetails = () => {
   return (
     <div className="flex">
       <div className="w-3/4 p-4 border border-gray-300 rounded-lg mr-4">
-        <h2 className="text-xl font-bold mb-4">Name of the Candidate</h2>
-        <p className="mb-6">created by Admin 1 at 00:00 hrs</p>
-        <p className="mb-8">
-          Lorem ipsum dolor sit amet consectetur. Maecenas dignissim a tortor lorem mattis. Aliquet quis malesuada neque nunc ac sem
-          facilisis ut. Faucibus nullam commodo hendrerit facilisi pretium gravida massa luctus in.
-        </p>
-
-        
         <div>
           <div className="mb-4">
             <h3 className="text-lg font-bold mb-2">Personal Details</h3>
