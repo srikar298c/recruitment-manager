@@ -8,7 +8,7 @@ function CanditatesPage() {
     <main className="flex w-full flex-grow">
       <div className="flex flex-col ">
         
-      
+      <CandidateDetails/>
       
       </div>
     </main>
