@@ -566,6 +566,60 @@ th.sortable::after {
 .actions .upload::before {
     content: '↑';
 }
+
+/****************************** all requests ***************************/
+
+
+h1 {
+    margin-top: 0;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.service-request-btn {
+    margin-left: auto;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.severity {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.high { background-color: #FFCCCB; }
+.medium { background-color: #FFE5B4; }
+.low { background-color: #90EE90; }
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .filter-buttons {
