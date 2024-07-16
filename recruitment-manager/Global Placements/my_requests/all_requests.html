@@ -9,7 +9,7 @@
 <body>
     <div class="sidebar-container ">
         <div class="logo-container">
-            <img class="logo" src="../images/Global Placements Logo 2.png" alt="Global Placements" >
+            <img class="logo" src="../../Global Placements/images/Global Placements Logo 2.png" alt="Global Placements" >
         </div>
         <div class="sidebar">
         <div class="sidebar-nav">
@@ -65,38 +65,56 @@
             </div>
         </div>
         <div class="main-content">
-        
-                    <h1>All Requests</h1>
-                    <div class="filters">
-                        <select id="countryFilter" multiple>
-                            <option value="">Country</option>
-                        </select>
-                        <select id="severityFilter" multiple>
-                            <option value="">Severity</option>
-                        </select>
-                        <select id="statusFilter" multiple>
-                            <option value="">Status</option>
-                        </select>
-
-                        <button id="serviceRequestBtn" class="service-request-btn">
-                            <a href="../../Global Placements/my_requests/open_service_request.html">+ Service Request</a></button>
-                    </div>
-                    <table id="requestsTable">
-                        <thead>
-                            <tr>
-                                <th>Service No.</th>
-                                <th>Country</th>
-                                <th>Name of the Candidate</th>
-                                <th>Severity</th>
-                                <th>Status</th>
-                                <th>Created on</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-             
-              
+            <h1>All Requests</h1>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="countryFilter">Country</label>
+                    <select id="countryFilter" multiple>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="severityFilter">Severity</label>
+                    <select id="severityFilter" multiple>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter">Status</label>
+                    <select id="statusFilter" multiple>
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Closed">Closed</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button id="serviceRequestBtn" class="service-request-btn">
+                    <a href="../../Global Placements/my_requests/open_service_request.html">+ Service Request</a>
+                </button>
+            </div>
+            <table id="requestsTable">
+                <thead>
+                    <tr>
+                        <th>Service No.</th>
+                        <th>Country</th>
+                        <th>Name of the Candidate</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                        <th>Created on</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
+        
+        
     </div>
   
      <!-- <button class="button upload-data">Upload Data</button>  -->

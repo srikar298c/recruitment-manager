@@ -714,24 +714,91 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 /* Filter Buttons Container */
-.filter-buttons {
-    margin-bottom: 20px;
+/* Filters styling */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
 }
 
-/* Individual Filter Buttons */
-.filter-btn {
-    margin-right: 5px;
-    padding: 5px 10px;
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
     cursor: pointer;
-    border: 1px solid black;
-    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.filter-group select[multiple] {
+    height: auto;
+    min-height: 100px;
+}
+
+.filter-group select option {
+    padding: 5px;
+}
+
+.service-request-btn {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-request-btn:hover {
+    background-color: #0056b3;
+}
+
+.service-request-btn a {
+    color: white;
+    text-decoration: none;
+}
+/* Table styling */
+#requestsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+#requestsTable th, #requestsTable td {
+    border: 1px solid #ccc;
+    padding: 0.8em;
+    text-align: left;
+}
+
+#requestsTable th {
     background-color: #f0f0f0;
 }
 
-/* Active Filter Button */
-.filter-btn.active {
-    background-color: #007bff;
-    color: white;
+#requestsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 /* Table Styling */
@@ -747,6 +814,11 @@ th, td {
     text-align: left;
 }
 
+#actions{
+    align-items: center;
+    justify-content: center;
+    
+}
 /* Sortable Table Headers */
 th.sortable {
     cursor: pointer;
@@ -758,6 +830,17 @@ th.sortable::after {
 }
 
 /* Action Button Styling */
+.submissions-actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    border: 1px solid black;
+   
+   
+    cursor: pointer;
+}
 .actions {
     display: flex;
     align-items: center;
@@ -823,15 +906,7 @@ select {
 
 
 
-th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
 
-th {
-    background-color: #f2f2f2;
-}
 
 .severity {
     padding: 4px 8px;
