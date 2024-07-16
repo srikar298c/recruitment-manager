@@ -130,3 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Form submitted');
     });
     
+    document.addEventListener('DOMContentLoaded', () => {
+      const notificationIcon = document.getElementById('notification-icon');
+      const notificationPopup = document.getElementById('notification-popup');
+      const closePopup = document.getElementById('close-popup');
+  
+      notificationIcon.addEventListener('click', () => {
+          notificationPopup.classList.toggle('hidden');
+      });
+  
+      closePopup.addEventListener('click', () => {
+          notificationPopup.classList.add('hidden');
+      });
+  
+      document.addEventListener('click', (event) => {
+          if (!notificationPopup.contains(event.target) && !notificationIcon.contains(event.target)) {
+              notificationPopup.classList.add('hidden');
+          }
+      });
+  });
+  
