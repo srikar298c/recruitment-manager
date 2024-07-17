@@ -1,10 +1,11 @@
 [
     {
-        "title": "INDUSTRIAL NURSE, Oman",
+        "title": "INDUSTRIAL NURSE, OMAN",
         "experience": "3 years",
         "qualification": "BSc",
         "gender": "Male",
-        "location": "OMAN 20-07-2024",
+        "location": "OMAN",
+        "date": "20-07-2023",
         "details": {
             "country": "OMAN",
             "project": "NICU Nurses",
@@ -31,7 +32,9 @@
         "experience": "3 years",
         "qualification": "BSc",
         "gender": "Male",
-        "location": "UAE 20-07-2024",
+        "location": "UAE ",
+     
+        "date": "20-07-2023",
         "details": {
             "country": "OMAN",
             "project": "NICU Nurses",

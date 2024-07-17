@@ -217,7 +217,7 @@ height: 20px;
 
 .main-content {
     position: relative;
-    max-width: auto;
+    min-width: 1100px;
     margin: 10px auto;
     background-color: white;
     border-radius: 10px;
@@ -300,10 +300,27 @@ gap: 4px;
 }
 .job-detail {
     margin-bottom: 15px;
-    
+      display: flex;
+      align-items: center;
+      
+}
+.job-detail svg{
+padding: 5px;
+}
+
+.location-date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 .job-location {
-    color: #ffa500;
+    color: #FF941F;
+    
+}
+
+.job-date{
+    color: #FF941F;
 }
 .button {
     color:  #521BFF;
