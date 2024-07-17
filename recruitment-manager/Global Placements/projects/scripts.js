@@ -1,9 +1,19 @@
 
 const formSections = document.querySelectorAll('.form-section');
 const navButtons = document.querySelectorAll('.nav-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const submitBtn = document.getElementById('submit-btn');
+// Get the current URL path
+const currentFolder = window.location.pathname.split('/').slice(-2, -1)[0];
+
+// Get all sidebar links
+const sidebarLinks = document.querySelectorAll('.sidebar-item a');
+
+// Loop through the links and add the active class to the matching link
+sidebarLinks.forEach(link => {
+  const linkFolder = link.getAttribute('href').split('/').slice(-3, -2)[0];
+  if (linkFolder === currentFolder) {
+    link.parentElement.classList.add('active');
+  }
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="job-detail">Experience: ${job.experience}</div>
               <div class="job-detail">Qualification: ${job.qualification}</div>
               <div class="job-detail">Gender: ${job.gender}</div>
-              
+
               <div class="job-detail location-date">
               <div class="job-detail job-location"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#FF941F" d="M16 18a5 5 0 1 1 5-5a5.006 5.006 0 0 1-5 5m0-8a3 3 0 1 0 3 3a3.003 3.003 0 0 0-3-3"/><path fill="#FF941F" d="m16 30l-8.436-9.949a35 35 0 0 1-.348-.451A10.9 10.9 0 0 1 5 13a11 11 0 0 1 22 0a10.9 10.9 0 0 1-2.215 6.597l-.001.003s-.3.394-.345.447ZM8.813 18.395s.233.308.286.374L16 26.908l6.91-8.15c.044-.055.278-.365.279-.366A8.9 8.9 0 0 0 25 13a9 9 0 1 0-18 0a8.9 8.9 0 0 0 1.813 5.395"/></svg>${job.location}</div>
 
@@ -115,43 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    prevBtn.addEventListener('click', () => {
-      if (currentSection > 0) {
-        currentSection--;
-        showSection(currentSection);
-      }
-    });
+ 
     
-    nextBtn.addEventListener('click', () => {
-      if (currentSection < formSections.length - 1) {
-        currentSection++;
-        showSection(currentSection);
-      }
-    });
     
-    document.getElementById('upload-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Handle form submission here
-      console.log('Form submitted');
-    });
     
-    document.addEventListener('DOMContentLoaded', () => {
-      const notificationIcon = document.getElementById('notification-icon');
-      const notificationPopup = document.getElementById('notification-popup');
-      const closePopup = document.getElementById('close-popup');
-  
-      notificationIcon.addEventListener('click', () => {
-          notificationPopup.classList.toggle('hidden');
-      });
-  
-      closePopup.addEventListener('click', () => {
-          notificationPopup.classList.add('hidden');
-      });
-  
-      document.addEventListener('click', (event) => {
-          if (!notificationPopup.contains(event.target) && !notificationIcon.contains(event.target)) {
-              notificationPopup.classList.add('hidden');
-          }
-      });
-  });
-  

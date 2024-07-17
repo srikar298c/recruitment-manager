@@ -1,3 +1,15 @@
+const currentFolder = window.location.pathname.split('/').slice(-2, -1)[0];
+
+// Get all sidebar links
+const sidebarLinks = document.querySelectorAll('.sidebar-item a');
+
+// Loop through the links and add the active class to the matching link
+sidebarLinks.forEach(link => {
+  const linkFolder = link.getAttribute('href').split('/').slice(-3, -2)[0];
+  if (linkFolder === currentFolder) {
+    link.parentElement.classList.add('active');
+  }
+});
 const candidateData = [
     { name: "Aimee Schwartz", phone: "968-832-1448", country: "Cambridgeshire", client: "Client ABD", travelled: "September", deployed: "Peru" },
     { name: "Kent Myers", phone: "497-725-6661", country: "Cambridgeshire", client: "Client XYS", travelled: "February", deployed: "Malaysia" },

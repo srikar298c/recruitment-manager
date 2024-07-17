@@ -73,10 +73,12 @@ height: 20px;
     padding-bottom: 20px;
     
 }
-
-.sidebar-item :hover,
-.sidebar-item.active,
-.sidebar-item :focus
+.sidebar-item.active a {
+    color: orange;
+  }
+  
+.sidebar-item a:hover,
+.sidebar-item a:active
 {
     color: orange;
 }
@@ -210,6 +212,10 @@ height: 20px;
     padding: 0;
     margin: 0;
     border-radius: 5px;
+    border: none;
+}
+.search-bar > input:focus {
+
     border: none;
 }
 
