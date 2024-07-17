@@ -7,6 +7,8 @@ const currentFolder = window.location.pathname.split('/').slice(-2, -1)[0];
 // Get all sidebar links
 const sidebarLinks = document.querySelectorAll('.sidebar-item a');
 
+const currentPath = window.location.pathname.split('/').pop();
+const formLinks = document.querySelectorAll('.nav-button a');
 // Loop through the links and add the active class to the matching link
 sidebarLinks.forEach(link => {
   const linkFolder = link.getAttribute('href').split('/').slice(-2, -1)[0];
@@ -15,6 +17,12 @@ sidebarLinks.forEach(link => {
   }
 });
 
+formLinks.forEach(link=>{
+
+  if (link.getAttribute('href').includes(currentPath)) {
+    link.parentElement.classList.add('active');
+  }
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const jobCardsContainer = document.querySelector('.job-cards');

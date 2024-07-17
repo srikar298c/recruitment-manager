@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Placements Dashboard</title>
-   <link rel="stylesheet" href="../../Global Placements/style.css">
+    <title>GP form-review</title>
+    <link rel="stylesheet" href="../../Global Placements/style.css">
 </head>
 <body>
-    <div class="sidebar-container ">
+    <div class="sidebar-container">
         <div class="logo-container">
             <img src="../../Global Placements/images/Global Placements Logo 2.png" alt="Global Placements" class="logo">
         </div>
@@ -41,7 +41,7 @@
     
             <div class="sidebar-item"><a href="../../Global Placements/terms_and_conditions/terms_and_conditions.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>TERMS AND CONDITIONS</a> </div>
         </div>
-            <div class="sidebar-item sidebar-signout">
+            <div class="sidebar-signout">
             <div class="sidebar-item"><a href="signout.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2v10h-2V2zm3.78 1.728l.809.589a9.5 9.5 0 1 1-11.178 0l.808-.59l1.178 1.617l-.808.59a7.5 7.5 0 1 0 8.822 0l-.808-.59z"/></svg><a href="signout.html">SIGN OUT</a> </div>
         </div>
     </div>
@@ -49,7 +49,6 @@
     
     <div class="container">
         <div class="header">
-        
             <div class="inside-header">
                 <div class="search-bar">
                     <input type="text" placeholder="Search for any keyword">
@@ -62,48 +61,23 @@
                 </div>
             </div>
         </div>
+
         <div class="main-content">
-
-                <div class="filter-buttons">
-                    <button class="filter-btn " data-filter="ALL">ALL</button>
-                    <button class="filter-btn" data-filter="Awaiting Documents">Awaiting Documents</button>
-                    <button class="filter-btn" data-filter="Profile Reject">Profile Reject</button>
-                    <button class="filter-btn" data-filter="In Progress">In Progress</button>
-                    <button class="filter-btn" data-filter="On Hold">On Hold</button>
-                    <button class="filter-btn" data-filter="Drop Before Interview">Drop Before Interview</button>
-                    <button class="filter-btn" data-filter="Interview Failed">Interview Failed</button>
-                    <button class="filter-btn" data-filter="Interview Passed">Interview Passed</button>
-                    <button class="filter-btn" data-filter="Declined the Offer">Declined the Offer</button>
-                    <button class="filter-btn" data-filter="Documentation">Documentation</button>
-                    <button class="filter-btn" data-filter="Travelled">Travelled</button>
-                </div>
-                <table id="candidateTable">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Project Name</th>
-                            <th class="sortable" data-sort="client">Client</th>
-                            <th class="sortable" data-sort="status">Status</th>
-                            <th >Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Table rows will be dynamically populated here -->
-                    </tbody>
-                </table>
-              
-          
-
-
+            <div class="success-icon">
+                <img src="success-icon.png" alt="Success">
+            </div>
+            <h1>Congratulations!</h1>
+            <p>Profile has been Submitted to <span id="countryName">Country</span></p>
+            <div class="congratulations buttons">
+                <button class="view-submissions-btn">View Submissions</button>
+                <button class="upload-new-profile-btn">Upload New Profile</button>
+            </div>
         </div>
-       
-         </div>
-   
-        
-       
-     <!-- <button class="button upload-data">Upload Data</button>  -->
-    <script src="./scripts.js"></script>
+    
+
+         
+        </div>
+    </div>
+    <script src="../../Global Placements/projects/scripts.js"></script>
 </body>
 </html>
