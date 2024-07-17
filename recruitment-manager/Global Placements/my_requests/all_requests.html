@@ -65,40 +65,32 @@
             </div>
         </div>
         <div class="main-content">
-            <h1>All Requests</h1>
+            <div class="main-content_header">
+                <div><h1>All Requests</h1></div>
+                <div><button id="serviceRequestBtn" class="service-request-btn">+ Service Request</button></div>
+            </div>
+            
             <div class="filters">
                 <div class="filter-group">
                     <label for="countryFilter">Country</label>
-                    <select id="countryFilter" multiple>
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Australia">Australia</option>
-                        <!-- Add more options as needed -->
-                    </select>
+                    <div class="custom-select">
+                        <select id="countryFilter" multiple></select>
+                    </div>
                 </div>
                 <div class="filter-group">
                     <label for="severityFilter">Severity</label>
-                    <select id="severityFilter" multiple>
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                        <!-- Add more options as needed -->
-                    </select>
+                    <div class="custom-select">
+                        <select id="severityFilter" multiple></select>
+                    </div>
                 </div>
                 <div class="filter-group">
                     <label for="statusFilter">Status</label>
-                    <select id="statusFilter" multiple>
-                        <option value="Open">Open</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Closed">Closed</option>
-                        <!-- Add more options as needed -->
-                    </select>
+                    <div class="custom-select">
+                        <select id="statusFilter" multiple></select>
+                    </div>
                 </div>
-                <button id="serviceRequestBtn" class="service-request-btn">
-                    <a href="../../Global Placements/my_requests/open_service_request.html">+ Service Request</a>
-                </button>
             </div>
+            
             <table id="requestsTable">
                 <thead>
                     <tr>

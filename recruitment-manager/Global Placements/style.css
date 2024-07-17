@@ -191,8 +191,8 @@ height: 20px;
 
 .search-bar {
     width: 556px;
-    height: 38px;
-    padding: 6px 10px;
+    height: auto;
+    
     border-radius: 8px;
     border: none;
     background-color: white;
@@ -205,9 +205,10 @@ height: 20px;
     height: 24px;
     fill: #262262; 
 }
-.search-bar input {
+.search-bar > input {
     width: 100%;
-    padding: 5px;
+    padding: 0;
+    margin: 0;
     border-radius: 5px;
     border: none;
 }
@@ -227,6 +228,7 @@ height: 20px;
 .user-icons {
     display: flex;
     gap: 15px; /* Adjust spacing between icons */
+    padding: 0 20px;
 }
 .user-icons a{
     color: white;
@@ -235,6 +237,8 @@ height: 20px;
 .user-icons svg {
     height: 30px;
     width: 30px;
+    padding: 0 10px;
+
     /* Ensure icons are white */
 }
 .user-icons a:hover{
@@ -590,7 +594,10 @@ border: none;
     padding: 10px;
 }
 
-
+.main-content_header{
+    display: flex;
+    justify-content: space-between;
+}
 .main-content input, .main-content select, .main-content textarea {
     width: 100%;
     padding: 8px;
@@ -780,7 +787,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     text-decoration: none;
 }
-/* Table styling */
+.create-btn{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    width: 100%;  
+}
+.create-btn:hover{
+    background-color: #0056b3;
+}
+/* Tab
+le styling */
 #requestsTable {
     width: 100%;
     border-collapse: collapse;
@@ -904,7 +925,10 @@ select {
     cursor: pointer;
 }
 
-
+.filter-buttons{
+    padding: 25px auto;
+  margin-bottom: 30px;
+}
 
 
 

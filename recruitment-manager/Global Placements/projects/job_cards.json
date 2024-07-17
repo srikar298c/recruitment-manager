@@ -25,6 +25,34 @@
                 "Other accommodations"
             ]
         }
+    },
+    {
+        "title": "HOSPITAL NURSE, UAE",
+        "experience": "3 years",
+        "qualification": "BSc",
+        "gender": "Male",
+        "location": "UAE 20-07-2024",
+        "details": {
+            "country": "OMAN",
+            "project": "NICU Nurses",
+            "additional_qualification": "BSc, GNM",
+            "additional_experience": "2 years in ICU with no service gap",
+            "specific_location": "Muscat, OMAN",
+            "contract_period": "2 yrs",
+            "age_range": "30-45 yrs",
+            "vacancies": 12,
+            "perks": [
+                "Salary",
+                "Visa",
+                "Accommodation",
+                "Transportation",
+                "Medical Insurance",
+                "Leaves",
+                "Food",
+                "Other accommodations"
+            ]
+        }
     }
+    
     
 ]
