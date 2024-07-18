@@ -9,8 +9,7 @@ sidebarLinks.forEach(link => {
   if (linkFolder === currentFolder) {
     link.parentElement.classList.add('active');
   }
-});
-let allRequests = [];
+});let allRequests = [];
 
 async function fetchData() {
     const response = await fetch('data.json');
