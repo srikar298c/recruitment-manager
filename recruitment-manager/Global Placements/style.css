@@ -769,7 +769,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+.service-request-btn a{
+    text-decoration: none;
+    color: white;
+}
 .service-request-btn:hover {
     background-color: #5148d3;
 }
@@ -1128,6 +1131,59 @@ select {
     text-decoration: none;
     font-size: 0.9rem;
 }
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.notifications-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.notifications-header h1::before {
+    content: "\1F514"; /* Unicode character for bell icon */
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.notifications-header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notifications-header button:hover {
+    background-color: #5a53e0;
+}
+
+.notifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notifications-list li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+
+.notifications-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.notifications-list li:last-child {
+    border-bottom: none;
+}
 
 
