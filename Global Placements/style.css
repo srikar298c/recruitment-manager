@@ -422,7 +422,7 @@ padding: 5px;
 
 .person-header{
     display: block;
-    margin: 60px;
+    margin-bottom: 30px;
 }
 
 .form-nav {
@@ -433,6 +433,17 @@ padding: 5px;
     padding: 5px;
 }
 
+.nav-button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    text-align: center;
+}
 .nav-button.active {
     color: #FF941F;
 }
@@ -451,16 +462,6 @@ padding: 5px;
 }
 .nav-button:hover:not(.active) {
     background-color: #d0d0d0;
-}
-.nav-button {
-    flex: 1;
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 14px;
 }
 
 .nav-button a {
@@ -567,8 +568,8 @@ padding: 5px;
 }
 
 .main-content input, .main-content select, .main-content textarea {
-    width: 0%;
-    padding: 8px;
+    width: 90%;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid black;
     border-radius: 4px;
@@ -596,7 +597,7 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 select {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -607,7 +608,7 @@ select {
     appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 10px ;
     background-size: 20px;
 }
 
