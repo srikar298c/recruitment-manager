@@ -96,27 +96,31 @@
                             <input type="text" id="mobileNumber" name="mobileNumber">
                           </div>
                           <div class="form-group">
-                            <input type="checkbox" id="sameAsMobile" name="sameAsMobile" onclick="copyMobileNumber(this)">
-                            <label for="sameAsMobile">WhatsApp number is the same as mobile number</label>
-                          </div>
-                          <div class="form-group">
+                            <div class="WhatsApp">
                             <label for="whatsAppNumber">WhatsApp Number</label>
+                            <label for="sameAsMobile"> same as mobile number</label>
+                            <input type="checkbox" id="sameAsMobile" name="sameAsMobile" onclick="copyMobileNumber(this)">
+                        </div>
                             <input type="text" id="whatsAppNumber" name="whatsAppNumber">
                           </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email">
                         </div>
-                        <div class="form-group">
+
+                        <div class="form-group radio">
                             <label for="gender">Gender</label>
-                            <select id="gender" name="gender">
-                                <option value="">Select</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <div>
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="single">Male</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="married">Female</label>
+                            </div>
                         </div>
-                        <div class="form-group">
+
+                        <div class="form-group radio">
                             <label>Marital Status</label>
                             <div>
                                 <input type="radio" id="single" name="maritalStatus" value="single">
@@ -174,9 +178,9 @@
                                 <!-- Add more options as needed -->
                             </select>
                         </div>
-                        <button type="button" id="nextButton">Next</button>
                     </div>
                 </form>
+                <button type="button" id="nextButton">Next</button>
             </div>
            
         </div>

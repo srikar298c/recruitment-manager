@@ -131,8 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
         showSection(currentSection);
       });
     });
-    
- 
-    
-    
-    
+    function copyMobileNumber(checkbox) {
+      var mobileNumber = document.getElementById('mobileNumber').value;
+      var whatsappNumberField = document.getElementById('whatsAppNumber');
+      if (checkbox.checked) {
+        whatsappNumberField.value = mobileNumber;
+        whatsappNumberField.disabled = true;
+      } else {
+        whatsappNumberField.value = '';
+        whatsappNumberField.disabled = false;
+      }
+    }
