@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                           <div class="detail-row"><span class="detail-label">Age:</span><span class="detail-value">${job.details.age_range}</span></div>
                           <div class="detail-row"><span class="detail-label">Vacancies:</span><span class="detail-value">${job.details.vacancies}</span></div>
                           <div class="detail-row"><span class="detail-label">Perks:</span><span class="detail-value">${job.details.perks.join('<br>')}</span></div>
-                      </div>
-                      
-                    
+                      </div> 
                   </div>
               </div>
           `;

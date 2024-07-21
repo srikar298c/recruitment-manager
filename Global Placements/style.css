@@ -150,9 +150,9 @@ height: 20px;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
 }
 .success-icon img {
     width: 80px;
@@ -329,7 +329,7 @@ padding: 5px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    border-radius: 15px;
     z-index: 1001;
 }
 
@@ -339,16 +339,17 @@ padding: 5px;
     border-radius: 10px;
     max-width: 500px;
     width: 90%;
+    height: 70%;
     position: relative;
-    top: 0;
-    left: 0;
+    top: 20px;
+    
 }
 
 .popup-content h2 {
     margin: 0;
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: #000;
 }
 
@@ -367,16 +368,17 @@ padding: 5px;
 
 .detail-row {
     display: flex;
-gap: 10px;
+/* gap: 20px; */
     margin-bottom: 10px;
+   
    
 }
 
 .detail-label {
     font-weight: bold;
     color: #000;
-    
-    display: inline-block;
+    width: 160px;
+    margin-right: 50px;
 }
 
 .popup .perks {
