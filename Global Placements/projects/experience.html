@@ -75,52 +75,56 @@
                 <div class="nav-button " data-page="experience"><a href="../../Global Placements/projects/experience.html">Experience </a></div>
                 <div class="nav-button" data-page="documents"><a href="../../Global Placements/projects/documents.html">Documents</a></div>
                 <div class="nav-button" data-page="review"><a href="../../Global Placements/projects/reviews.html">Review </a></div>
-            </div>
+            </div><div class="person-header"><h2>Exper</h2></div>
             <div class="form-container">
                 <form id="experienceForm" class="form">
-                    <div class="form-group">
-                        <label for="registrationCouncil">Current Registration Council*</label>
-                        <select id="registrationCouncil" required>
-                            <option value="">Select</option>
-                            <!-- Add options here -->
-                        </select>
-                        <button type="button" class="add-button">+ Add Registration</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="department">Department</label>
-                        <select id="department">
-                            <option value="">Select</option>
-                            <!-- Add options here -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="employerName">Latest Employer Name</label>
-                        <input type="text" id="employerName" placeholder="Enter the Hospital name">
-                        <button type="button" class="add-button">+ Add Employment</button>
-                    </div>
-                    <div class="form-row">
+                    <div class="form-step">
                         <div class="form-group">
+                          <label for="registrationCouncil">Current Registration Council*</label>
+                          <select id="registrationCouncil" required>
+                            <option value="">Select</option>
+                            <!-- Add options here -->
+                          </select>
+                          <button type="button" class="add-button">+ Add Registration</button>
+                        </div>
+                        <div class="form-group">
+                          <label for="department">Department</label>
+                          <select id="department">
+                            <option value="">Select</option>
+                            <!-- Add options here -->
+                          </select>
+                        </div>
+                        <div class="form-group full-width">
+                          <label for="employerName">Latest Employer Name</label>
+                          <input type="text" id="employerName" placeholder="Enter the Hospital name">
+                          <button type="button" class="add-button">+ Add Employment</button>
+                        </div>
+                        <div class="form-group row-group full-width">
+                          <div class="form-group">
                             <label for="fromDate">From</label>
                             <input type="date" id="fromDate">
-                        </div>
-                        <div class="form-group">
+                          </div>
+                          <div class="form-group">
                             <label for="toDate">To</label>
                             <input type="date" id="toDate">
-                        </div>
-                        <div class="form-group checkbox-group">
+                          </div>
+                          <div class="form-group checkbox-group">
                             <input type="checkbox" id="presentCheck">
                             <label for="presentCheck">Present</label>
+                          </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="preferredCountry">Preferred Country of Work</label>
-                        <input type="text" id="preferredCountry" placeholder="Enter your Preferred Country">
-                    </div>
-                    <div class="button-group">
-                        <button type="button" id="prevButton">Previous</button>
-                        <button type="button" id="nextButton">Next</button>
-                    </div>
-                </form>
+                        <div class="form-group full-width">
+                          <label for="preferredCountry">Preferred Country of Work</label>
+                          <input type="text" id="preferredCountry" placeholder="Enter your Preferred Country">
+                        </div>
+                      </div>
+                    </form>
+                    
+                  <div class="button-group">
+                      <button type="button" id="prevButton">Previous</button>
+                      
+                      <button type="button" id="nextButton">Next</button>
+                  </div>
             </div>
         </div>
     </div>

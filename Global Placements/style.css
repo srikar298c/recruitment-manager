@@ -557,16 +557,45 @@ padding: 5px;
 
 .form-step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    padding: 10px;
-   
-}
-
+  }
+  
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+  
+  .form-group.row-group {
+    display: contents;
+  }
+  
+  .form-group.row-group > * {
+    margin-bottom: 0;
+  }
+  .button-group{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .button-group button{
+    width: 70px;
+    background-color:  #521BFF;
+    color: wheat;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    
+  }
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-group label {
+    margin-left: 5px;
+  }
+  
 .form-group.sameasmobile{
     display: flex;
     justify-content: space-around;
