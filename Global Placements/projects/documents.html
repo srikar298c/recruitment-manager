@@ -82,79 +82,185 @@
                     <tr>
                         <td>Curriculum Vitae (CV)*</td>
                         <td class="file-input">
-                          
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
+                            <span>Choose File(Only pdf, upto 1MB)</span>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Passport*</td>
+                        <td>Passport</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Degree</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Transcripts</td>
+                        <td>Transactions</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Registration</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Work Experience</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>DataFlow</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Prometric/DHA</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Others (if any)</td>
+                        <td>Others(if any)</td>
                         <td class="file-input">
+                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
                             <span>Choose File(Only pdf, upto 1MB)</span>
-                            <button type="button" class="download-btn">⬇</button>
                         </td>
-                        <td><button type="button" class="upload-btn">Upload</button></td>
+                        <td>
+                            <button type="button" class="upload-btn" data-document="cv">Upload</button>
+                            <button type="button" class="add-more-btn" data-document="cv">Add More</button>
+                        </td>
                     </tr>
                 </table>
                 <button type="button" class="add-document-btn">+ Add Documents</button>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.querySelector('.document-table');
+        
+            table.addEventListener('click', function(e) {
+                if (e.target.classList.contains('upload-btn')) {
+                    const documentType = e.target.getAttribute('data-document');
+                    const fileInput = document.getElementById(`${documentType}-file`);
+                    fileInput.click();
+                } else if (e.target.classList.contains('add-more-btn')) {
+                    const documentType = e.target.getAttribute('data-document');
+                    addMoreDocuments(documentType);
+                }
+            });
+        
+            // Add event listeners for file inputs
+            document.querySelectorAll('input[type="file"]').forEach(input => {
+                input.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        if (file.type !== 'application/pdf') {
+                            alert('Please upload a PDF file.');
+                            return;
+                        }
+                        if (file.size > 1024 * 1024) {
+                            alert('File size should not exceed 1MB.');
+                            return;
+                        }
+                        uploadFile(file, e.target.id.replace('-file', ''));
+                    }
+                });
+            });
+        
+            function uploadFile(file, documentType) {
+                // Simulating file upload
+                console.log(`Uploading ${file.name} for ${documentType}`);
+                // Here you would typically send the file to your server
+                // For demonstration, we'll just show an alert
+                setTimeout(() => {
+                    alert(`${file.name} uploaded successfully for ${documentType}`);
+                }, 1000);
+            }
+        
+            function addMoreDocuments(documentType) {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${documentType} (Additional)</td>
+                    <td class="file-input">
+                        <input type="file" id="${documentType}-file-additional" accept=".pdf" style="display: none;">
+                        <span>Choose File(Only pdf, upto 1MB)</span>
+                        <button type="button" class="download-btn">⬇</button>
+                    </td>
+                    <td>
+                        <button type="button" class="upload-btn" data-document="${documentType}-additional">Upload</button>
+                    </td>
+                `;
+                const referenceRow = document.querySelector(`[data-document="${documentType}"]`).closest('tr');
+                referenceRow.parentNode.insertBefore(newRow, referenceRow.nextSibling);
+        
+                // Add event listener for the new file input
+                const newFileInput = document.getElementById(`${documentType}-file-additional`);
+                newFileInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        if (file.type !== 'application/pdf') {
+                            alert('Please upload a PDF file.');
+                            return;
+                        }
+                        if (file.size > 1024 * 1024) {
+                            alert('File size should not exceed 1MB.');
+                            return;
+                        }
+                        uploadFile(file, `${documentType}-additional`);
+                    }
+                });
+            }
+        });
+        </script>
     <script src="../../Global Placements/projects/scripts.js"></script>
 </body>
 </html>
