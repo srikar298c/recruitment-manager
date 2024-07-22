@@ -73,30 +73,49 @@
             </div>
             <form id="form1" class="form">
                 <div class="form-step">
-                    
                     <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title">
-            </div>
-            <div class="form-group">
-                <label for="country">Select a Country</label>
-                <input type="text" id="country" name="country">
-            </div>
-                <div class="form-group">
-                <label for="service-id">Service No/Candidate ID</label>
-                <input type="text" id="service-id" name="service-id">
-            </div>
-                <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4"></textarea>
-            </div>
-        </div>
-        <button type="submit" class="create-btn">Create</button>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Select a Country</label>
+                        <input type="text" id="country" name="country">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-id">Service No/Candidate ID</label>
+                        <input type="text" id="service-id" name="service-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="create-btn">Create</button>
             </form>
+            
+        </div>
+        
         </div>
     </div>
   
      <!-- <button class="button upload-data">Upload Data</button>  -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the candidate data from localStorage
+            const candidateData = JSON.parse(localStorage.getItem('candidateData'));
+        
+            if (candidateData) {
+                // Populate the form fields
+                document.getElementById('title').value = `Service Request for ${candidateData.name}`;
+                document.getElementById('country').value = candidateData.project.replace('Project ', '');
+                // document.getElementById('service-id').value = candidateData.phone;
+                // document.getElementById('description').value = `Client: ${candidateData.client}\nStatus: ${candidateData.status}`;
+        
+                // Clear the stored data
+                localStorage.removeItem('candidateData');
+            }
+        });
+        </script>
     <script src="./scripts.js"></script>
 </body>
 </html>

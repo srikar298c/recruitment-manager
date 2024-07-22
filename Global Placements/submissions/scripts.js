@@ -43,7 +43,17 @@ function renderTable(data) {
             <td><button class="submissions-actions"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h5V4h6v5h5v6h-5v5H9v-5H4zm7 4v5h2v-5h5v-2h-5V6h-2v5H6v2z"/></svg></button></td>
         `;
         tbody.appendChild(row);
+
+        // Add click event listener to the action button
+        const actionButton = row.querySelector('.submissions-actions');
+        actionButton.addEventListener('click', () => openServiceRequest(candidate));
     });
+}function openServiceRequest(candidate) {
+    // Store the candidate data in localStorage
+    localStorage.setItem('candidateData', JSON.stringify(candidate));
+
+    // Redirect to the forms page
+    window.location.href = '../../Global Placements/my_requests/open_service_request.html';
 }
 
 // Function to sort the table by a given column

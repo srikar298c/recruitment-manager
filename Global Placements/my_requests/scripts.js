@@ -81,3 +81,19 @@ document.getElementById('serviceRequestBtn').addEventListener('click', () => {
 });
 
 fetchData();
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the candidate data from localStorage
+    const candidateData = JSON.parse(localStorage.getItem('candidateData'));
+
+    if (candidateData) {
+        // Populate the form fields
+        document.getElementById('title').value = `Service Request for ${candidateData.name}`;
+        document.getElementById('country').value = candidateData.project.replace('Project ', '');
+        document.getElementById('service-id').value = candidateData.phone;
+        document.getElementById('description').value = `Client: ${candidateData.client}\nStatus: ${candidateData.status}`;
+
+        // Clear the stored data
+        localStorage.removeItem('candidateData');
+    }
+});
