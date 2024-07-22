@@ -86,14 +86,16 @@
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group radio">
                         <label for="gender">Gender</label>
-                        <select id="gender" name="gender" required>
-                            <option value="">Select</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="single">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="married">Female</label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="mobile">Mobile</label>
@@ -240,12 +242,16 @@
                         </button>
                         <button type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+                            </button>
+
+                    </div>
+                </div>
+            </form>
+            <button  class="submit-btn"><a href="../../Global Placements/projects/congratulations.html"></a>Submit</button>
+                    </div>
+                    
+                </div>
             </div>
-           
-        </div>
-    </div>
     <script src="../../Global Placements/projects/scripts.js"></script>
 </body>
 </html>

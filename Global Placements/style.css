@@ -1129,3 +1129,40 @@ select {
 }
 
 
+.documents {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    padding: 10px;
+}
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.document-item:last-child {
+    border-bottom: none;
+}
+.document-actions {
+    display: flex;
+    gap: 10px;
+}
+.document-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: #5e17eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+}
