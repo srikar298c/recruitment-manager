@@ -40,7 +40,7 @@ function renderTable(data) {
             <td>${candidate.project}</td>
             <td>${candidate.client}</td>
             <td>${candidate.status}</td>
-            <td><button class="submissions-actions"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21c-1.654 0-3-1.346-3-3l.053-3.053L6.018 15C4.346 15 3 13.654 3 12s1.346-3 3-3l3.053-.054L9 6.018C9 4.346 10.346 3 12 3s3 1.346 3 3l.055 2.946L18.018 9C19.654 9 21 10.346 21 12s-1.346 3-3 3l-2.945-.053L15 18.018C15 19.654 13.654 21 12 21m-1-8v5.018c0 .533.449.982 1 .982s1-.449 1-1v-5h5.018c.533 0 .982-.449.982-1s-.449-1-1-1h-5V6c0-.569-.449-1-1-1s-1 .449-1 1v5H6c-.569 0-1 .449-1 1s.449 1 1 1z"/></svg></button></td>
+            <td><button class="submissions-actions"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h5V4h6v5h5v6h-5v5H9v-5H4zm7 4v5h2v-5h5v-2h-5V6h-2v5H6v2z"/></svg></button></td>
         `;
         tbody.appendChild(row);
     });

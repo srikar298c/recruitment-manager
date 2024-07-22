@@ -878,8 +878,9 @@ th {
 
 /* Table Rows */
 tbody tr {
-    transition: background 0.3s;
+    transition: background 0.3s;    
 }
+
 
 tbody tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.1);
@@ -897,6 +898,7 @@ tbody tr:hover td {
 /* Sortable Columns */
 th.sortable {
     cursor: pointer;
+    align-items: center;
 }
 
 th.sortable:hover {
@@ -907,8 +909,8 @@ th.sortable:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background-color: #6c63ff;
     border: none;
@@ -917,7 +919,9 @@ th.sortable:hover {
 }
 
 .submissions-actions svg {
-    fill: white;
+    width: 35px;
+    height: 35px;
+    color: white;
 }
 
 .submissions-actions:hover {
