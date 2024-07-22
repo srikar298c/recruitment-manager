@@ -791,6 +791,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Table Headers and Cells */
 th, td {
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -805,11 +806,13 @@ th {
     font-weight: bold;
     font-size: 1rem;
     color: #333;
+    
 }
 
 /* Table Rows */
 tbody tr {
     transition: background 0.3s;
+    
 }
 
 tbody tr:nth-child(even) {
@@ -870,6 +873,7 @@ th {
     font-weight: bold;
     font-size: 1rem;
     color: #333;
+    
 }
 
 /* Table Rows */
