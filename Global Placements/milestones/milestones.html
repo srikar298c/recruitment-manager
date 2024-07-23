@@ -65,13 +65,25 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="ALL">ALL</button>
-                <button class="filter-btn" data-filter="Cambridgeshire">Cambridgeshire</button>
-                <button class="filter-btn" data-filter="Borders">Borders</button>
-                <button class="filter-btn" data-filter="Berkshire">Berkshire</button>
-                <button class="filter-btn" data-filter="Buckinghamshire">Buckinghamshire</button>
-                <button class="filter-btn" data-filter="Bedfordshire">Bedfordshire</button>
+             <div class="filter-container">
+                <div class="filter-group">
+                    <label for="countryFilter">Country:</label>
+                    <select id="countryFilter">
+                        <option value="">All Countries</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="clientFilter">Client:</label>
+                    <select id="clientFilter">
+                        <option value="">All Clients</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="travelledDateFilter">Deployed to</label>
+                    <select id="DeployedFilter">
+                        <option value="">All Dates</option>
+                    </select>
+                </div>
             </div>
             <table id="candidateTable">
                 <thead>
