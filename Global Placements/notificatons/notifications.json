@@ -1,22 +1,44 @@
-[
-    {
-        "message": "Candidate Number/Name status has been updated",
-        "link": "#"
-    },
-    {
-        "message": "Candidate Number/Name status has been updated",
-        "link": "#"
-    },
-    {
-        "message": "Candidate Number/Name status has been updated",
-        "link": "#"
-    },
-    {
-        "message": "Candidate Number/Name status has been updated",
-        "link": "#"
-    },
-    {
-        "message": "Candidate Number/Name status has been updated",
-        "link": "#"
-    }
-]
+{
+    "notifications": [
+      {
+        "content": "Candidate Number 12345/John Doe status has been updated",
+        "timestamp": "2023-07-23T09:30:00Z"
+      },
+      {
+        "content": "Your Service No ABC123 status has been changed",
+        "timestamp": "2023-07-23T10:15:00Z"
+      },
+      {
+        "content": "Candidate Number 67890/Jane Smith status has been updated",
+        "timestamp": "2023-07-23T11:00:00Z"
+      },
+      {
+        "content": "Candidate Number 13579/Bob Johnson status has been updated",
+        "timestamp": "2023-07-23T12:45:00Z"
+      },
+      {
+        "content": "Candidate Number 24680/Alice Brown status has been updated",
+        "timestamp": "2023-07-23T14:20:00Z"
+      },
+      {
+        "content": "Your Service No XYZ789 status has been changed",
+        "timestamp": "2023-07-23T15:30:00Z"
+      },
+      {
+        "content": "Candidate Number 11223/Eva Green status has been updated",
+        "timestamp": "2023-07-23T16:15:00Z"
+      },
+      {
+        "content": "Candidate Number 44556/Tom White status has been updated",
+        "timestamp": "2023-07-23T17:00:00Z"
+      },
+      {
+        "content": "Candidate Number 77889/Sarah Black status has been updated",
+        "timestamp": "2023-07-23T18:30:00Z"
+      },
+      {
+        "content": "Your Service No DEF456 status has been changed",
+        "timestamp": "2023-07-23T19:45:00Z"
+      }
+    ]
+  }
