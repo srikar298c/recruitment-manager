@@ -66,40 +66,35 @@
         </div>
         <div class="main-content">
             <div class="main-content_header">
-                <div><h1>All Requests</h1></div>
+                <div><h1>All Requests</h1>
+                </div>
+
                 <div><button id="serviceRequestBtn" class="service-request-btn"><a href="../../Global Placements/my_requests/open_service_request.html"> Service Request </a></button></div>
             </div>
             
-            <div class="filters">
+           <div class="filter-container">
                 <div class="filter-group">
-                    <label for="countryFilter">Country</label>
-                    <div class="custom-select">
-                        <select id="countryFilter" multiple></select>
-                    </div>
+                    <label for="countryFilter">Country:</label>
+                    <select id="countryFilter">
+                        <option value="">All Countries</option>
+                    </select>
                 </div>
+               
                 <div class="filter-group">
-                    <label for="severityFilter">Severity</label>
-                    <div class="custom-select">
-                        <select id="severityFilter" multiple></select>
-                    </div>
+                    <label for="statusFilter">Status:</label>
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                </select>
                 </div>
-                <div class="filter-group">
-                    <label for="statusFilter">Status</label>
-                    <div class="custom-select">
-                        <select id="statusFilter" multiple></select>
-                    </div>
-                </div>
-            </div>
             
             <table id="requestsTable">
                 <thead>
                     <tr>
-                        <th>Service No.</th>
-                        <th>Country</th>
-                        <th>Name of the Candidate</th>
-                        <th>Severity</th>
-                        <th>Status</th>
-                        <th>Created on</th>
+                        <th class="sortable" data-sort="service_no">Service No.</th>
+                        <th class="sortable" data-sort="country">Country</th>
+                        <th class="sortable" data-sort="name">Name of the Candidate</th>
+                        <th class="sortable" data-sort="status">Status</th>
+                        <th class="sortable" data-sort="created_on">Created on</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

@@ -9,78 +9,92 @@ sidebarLinks.forEach(link => {
   if (linkFolder === currentFolder) {
     link.parentElement.classList.add('active');
   }
-});let allRequests = [];
+});
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        const requests = data;
 
-async function fetchData() {
-    const response = await fetch('data.json');
-    allRequests = await response.json();
-    populateFilters();
-    renderTable(allRequests);
-}
+        // Get references to important DOM elements
+        const table = document.getElementById('requestsTable');
+        const tbody = table.querySelector('tbody');
+        const countryFilter = document.getElementById('countryFilter');
+        const statusFilter = document.getElementById('statusFilter');
 
-function populateFilters() {
-    const countries = [...new Set(allRequests.map(req => req.country))];
-    const severities = [...new Set(allRequests.map(req => req.severity))];
-    const statuses = [...new Set(allRequests.map(req => req.status))];
+        const countries = [...new Set(requests.map(r => r.country))];
+        const statuses = [...new Set(requests.map(r => r.status))];
 
-    populateFilter('countryFilter', countries);
-    populateFilter('severityFilter', severities);
-    populateFilter('statusFilter', statuses);
-}
+        populateFilter(countryFilter, countries);
+        populateFilter(statusFilter, statuses);
 
-function populateFilter(id, options) {
-    const select = document.getElementById(id);
-    options.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        select.appendChild(optionElement);
-    });
-}
+        // Function to populate filter dropdowns
+        function populateFilter(select, options) {
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+            });
+        }
 
-function renderTable(data) {
-    const tbody = document.querySelector('#requestsTable tbody');
-    tbody.innerHTML = '';
-    data.forEach(req => {
-        const row = tbody.insertRow();
-        row.innerHTML = `
-            <td>${req.serviceNo}</td>
-            <td>${req.country}</td>
-            <td>${req.candidateName}</td>
-            <td><span class="severity ${req.severity.toLowerCase()}">${req.severity}</span></td>
-            <td>${req.status}</td>
-            <td>${req.createdOn}</td>
-        `;
-    });
-}
+        // Function to render the table with given data
+        function renderTable() {
+            const selectedCountry = countryFilter.value;
+            const selectedStatus = statusFilter.value;
 
-function filterData() {
-    const selectedCountries = getSelectedValues('countryFilter');
-    const selectedSeverities = getSelectedValues('severityFilter');
-    const selectedStatuses = getSelectedValues('statusFilter');
+            const filteredRequests = requests.filter(request => 
+                (selectedCountry === '' || request.country === selectedCountry) &&
+                (selectedStatus === '' || request.status === selectedStatus)
+            );
 
-    const filteredData = allRequests.filter(req => 
-        (selectedCountries.length === 0 || selectedCountries.includes(req.country)) &&
-        (selectedSeverities.length === 0 || selectedSeverities.includes(req.severity)) &&
-        (selectedStatuses.length === 0 || selectedStatuses.includes(req.status))
-    );
+            tbody.innerHTML = '';
+            filteredRequests.forEach(request => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${request.serviceNo}</td>
+                    <td>${request.country}</td>
+                    <td>${request.candidateName}</td>
+                    <td>${request.status}</td>
+                    <td>${request.createdOn}</td>
+                `;
+            });
+        }
 
-    renderTable(filteredData);
-}
+        // Function to sort the table by a given column
+        function sortTable(column) {
+            requests.sort((a, b) => a[column].localeCompare(b[column]));
+            renderTable();
+        }
 
-function getSelectedValues(id) {
-    return Array.from(document.getElementById(id).selectedOptions).map(option => option.value);
-}
+        // Add event listeners for filters
+        countryFilter.addEventListener('change', renderTable);
+        statusFilter.addEventListener('change', renderTable);
 
-document.getElementById('countryFilter').addEventListener('change', filterData);
-document.getElementById('severityFilter').addEventListener('change', filterData);
-document.getElementById('statusFilter').addEventListener('change', filterData);
+        // Add click event listeners to sortable column headers
+        document.querySelectorAll('th.sortable').forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.dataset.sort;
+                sortTable(column);
+            });
+        });
+
+        // Initial render
+        renderTable();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+});
+
+
+
+
 
 document.getElementById('serviceRequestBtn').addEventListener('click', () => {
     window.location.href = 'service-request.html'; // Navigate to the service request page
 });
 
-fetchData();
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the candidate data from localStorage
