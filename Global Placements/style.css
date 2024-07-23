@@ -1,3 +1,20 @@
+/* Scrollbar Styles for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -102,7 +119,7 @@ height: 20px;
     width: auto;
     z-index: 1000;
     overflow: hidden;
-    border-radius: 0 0 0 20px;
+    border-radius: 0 0 8px 20px;
 }
 
 .inside-header {
