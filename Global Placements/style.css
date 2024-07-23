@@ -935,40 +935,45 @@ th.sortable:hover {
     background-color: #5148d3;
 }
 
-
 .actions {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e0dcdc;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    width: auto;
-    height: 14px;
-    cursor: pointer;
-}
-.actions button {
-    display: flex;
-    background-color: #0b7def;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-right: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.actions .download::before {
-    content: '↓';
+    gap: 10px;
 }
 
-.actions .upload::before {
-    content: '↑';
+button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.download {
+    color: #4caf50; /* Green color for download */
+}
+
+button.upload {
+    color: #0644a1; /* Red color for upload */
+}
+
+button svg {
+    width: 24px;
+    height: 24px;
+}
+
+button:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 
 /****************************** all requests ***************************/
 

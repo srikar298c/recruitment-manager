@@ -72,8 +72,8 @@ const currentFolder = window.location.pathname.split('/').slice(-2, -1)[0];
                     <td>${candidate.travelled}</td>
                     <td>${candidate.deployed}</td>
                        <td class="actions">
-                <button class="download"></button>
-                <button class="upload"></button>
+                <button class="download"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-8 4v-5h2v3h12v-3h2v5z"/></svg></button>
+                <button class="upload"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 16V7.85l-2.6 2.6L7 9l5-5l5 5l-1.4 1.45l-2.6-2.6V16zm-7 4v-5h2v3h12v-3h2v5z"/></svg></button>
             </td>
                 `;
             });
