@@ -1217,3 +1217,18 @@ ol {
 li {
     margin-bottom: 10px;
 }
+.submit-button {
+    background-color: #ff9900;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 95%;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.submit-button:hover {
+    background-color: #e68a00;
+}

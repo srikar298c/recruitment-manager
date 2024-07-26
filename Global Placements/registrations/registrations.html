@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Placements - Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="../../Global Placements/images/Global Placements Logo 2.png" alt="Global Placements" class="logo">
+            <div class="nav-links">
+                <a href="#">ABOUT US</a>
+                <a href="#">COMPANY</a>
+                <a href="#">EDUCATION</a>
+                <a href="#">HEALTHCARE</a>
+                <a href="#">INTERNSHIPS</a>
+                <a href="#">CURRENT VACANCIES</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="login-button">LOGIN</a>
+                <a href="#" class="register-button">REGISTER</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Register with Us..!</h1>
+        <p>Fill out required information</p>
+        <div class="tabs">
+            <button type="button" class="tab active" id="companyTab">COMPANY</button>
+            <button type="button" class="tab" id="freelancerTab">FREELANCER</button>
+        </div>
+        <form id="companyForm" class="form-section">
+            <input type="text" id="companyName" name="companyName" placeholder="Name of the Company" class="full-width">
+            <div class="two-column">
+                <input type="text" id="directorName1" name="directorName1" placeholder="Name of the Director">
+                <input type="text" id="directorName2" name="directorName2" placeholder="Name of the Director">
+            </div>
+            <input type="text" id="address1" name="address1" placeholder="Address 1" class="full-width">
+            <input type="text" id="address2" name="address2" placeholder="Address 2" class="full-width">
+            <div class="two-column">
+                <input type="text" id="city" name="city" placeholder="City">
+                <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code">
+            </div>
+            <div class="two-column">
+                <select id="state" name="state">
+                    <option value="">State</option>
+                    <!-- Add state options here -->
+                </select>
+                <select id="country" name="country">
+                    <option value="">Country</option>
+                    <!-- Add country options here -->
+                </select>
+            </div>
+            <div class="two-column">
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+                <input type="text" id="alternatePhone" name="alternatePhone" placeholder="Alternate Phone">
+            </div>
+            <div class="two-column">
+                <div class="radio-group">
+                    <label>Registered Company</label>
+                    <div>
+                        <input type="radio" id="registeredYes" name="registeredCompany" value="Yes">
+                        <label for="registeredYes">Yes</label>
+                        <input type="radio" id="registeredNo" name="registeredCompany" value="No">
+                        <label for="registeredNo">No</label>
+                    </div>
+                </div>
+                <input type="text" id="licenseNumber" name="licenseNumber" placeholder="License Number">
+            </div>
+            <input type="text" id="websiteURL" name="websiteURL" placeholder="Website URL" class="full-width">
+            <div class="two-column">
+                <input type="text" id="instagram" name="instagram" placeholder="Instagram">
+                <input type="text" id="twitter" name="twitter" placeholder="Twitter">
+            </div>
+            <div class="two-column">
+                <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn">
+                <input type="text" id="facebook" name="facebook" placeholder="Facebook">
+            </div>
+            <h3 class="full-width">Person Details</h3>
+            <div class="two-column">
+                <select id="designation" name="designation">
+                    <option value="">Designation</option>
+                    <!-- Add designation options here -->
+                </select>
+                <select id="personCountry" name="personCountry">
+                    <option value="">Country</option>
+                    <!-- Add country options here -->
+                </select>
+            </div>
+            <div class="two-column">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name">
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+            </div>
+            <input type="text" id="personAddress1" name="personAddress1" placeholder="Address 1" class="full-width">
+            <input type="text" id="personAddress2" name="personAddress2" placeholder="Address 2" class="full-width">
+            <div class="two-column">
+                <input type="text" id="personCity" name="personCity" placeholder="City">
+                <input type="text" id="personZipCode" name="personZipCode" placeholder="Zip Code">
+            </div>
+            <div class="two-column">
+                <select id="personState" name="personState">
+                    <option value="">State</option>
+                    <!-- Add state options here -->
+                </select>
+                <input type="text" id="personPhone" name="personPhone" placeholder="Phone">
+            </div>
+            <div class="two-column">
+                <input type="text" id="personAlternatePhone" name="personAlternatePhone" placeholder="Alternate Phone">
+                <input type="email" id="personEmail" name="personEmail" placeholder="Email">
+                <input type="password" id="createPassword" name="createPassword" placeholder="Create Password">
+                <input type="password" id="re-enterPassword" name="re-enterPassword" placeholder="Re Enter Password">
+            </div>
+
+        </form>
+        <form id="freelancerForm" class="form-section" style="display: none;">
+            <div class="two-column">
+                <input type="text" name="firstName" placeholder="First Name">
+                <input type="text" name="lastName" placeholder="Last Name">
+            </div>
+            <div class="two-column">
+                <input type="text" name="address1" placeholder="Address 1">
+                <input type="text" name="address2" placeholder="Address 2">
+            </div>
+            <div class="two-column">
+                <input type="text" name="city" placeholder="City">
+                <input type="text" name="zipCode" placeholder="Zip Code">
+            </div>
+            <div class="two-column">
+                <select name="state">
+                    <option value="">State</option>
+                    <!-- Add state options -->
+                </select>
+                <select name="country">
+                    <option value="">Country</option>
+                    <!-- Add country options -->
+                </select>
+            </div>
+            <div class="two-column">
+                <input type="tel" name="phone" placeholder="Phone">
+                <input type="tel" name="alternatePhone" placeholder="Alternate Phone">
+            </div>
+            <div class="two-column">
+                <input type="text" name="aadharNumber" placeholder="Aadhar Number">
+                <input type="text" name="passportNumber" placeholder="Passport Number">
+            </div>
+            <div class="two-column">
+                <input type="email" name="email" placeholder="Email">
+                <input type="email" name="confirmEmail" placeholder="Confirm Email">
+                <input type="password" id="createPassword" name="createPassword" placeholder="Create Password">
+                <input type="password" id="re-enterPassword" name="re-enterPassword" placeholder="Re Enter Password">
+            </div>
+        </form>
+        <button type="submit" class="submit-button">Register</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

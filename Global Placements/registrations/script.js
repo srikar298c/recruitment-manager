@@ -1,30 +1,20 @@
-function showForm(formType) {
+document.addEventListener('DOMContentLoaded', function() {
+    const companyTab = document.getElementById('companyTab');
+    const freelancerTab = document.getElementById('freelancerTab');
     const companyForm = document.getElementById('companyForm');
-    const tabs = document.getElementsByClassName('tab');
+    const freelancerForm = document.getElementById('freelancerForm');
 
-    if (formType === 'company') {
-        companyForm.classList.add('active');
-    } else {
-        companyForm.classList.remove('active');
-    }
+    companyTab.addEventListener('click', function() {
+        companyTab.classList.add('active');
+        freelancerTab.classList.remove('active');
+        companyForm.style.display = 'flex';
+        freelancerForm.style.display = 'none';
+    });
 
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-    }
-
-    document.querySelector(`.tab[onclick="showForm('${formType}')"]`).classList.add('active');
-}
-
-function redirectToFreelancer() {
-    window.location.href = 'freelancer.html';
-}
-
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    const createPassword = document.getElementById('createPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if (createPassword !== confirmPassword) {
-        alert('Passwords do not match!');
-        event.preventDefault();
-    }
+    freelancerTab.addEventListener('click', function() {
+        freelancerTab.classList.add('active');
+        companyTab.classList.remove('active');
+        freelancerForm.style.display = 'flex';
+        companyForm.style.display = 'none';
+    });
 });
