@@ -5,21 +5,31 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     margin: 0;
+    padding-top: 80px; /* Adjust for sticky navbar */
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #fff;
     padding: 10px 0;
-    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    z-index: 1000;
 }
 
 .nav-container {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
 }
 
 .nav-container a {
@@ -48,7 +58,9 @@ nav {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 90%;
+    max-width: 900px;
+    margin-top: 20px;
 }
 
 h2 {
@@ -58,7 +70,7 @@ h2 {
 
 .tabs {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -68,7 +80,8 @@ h2 {
     border: none;
     background-color: #f1f1f1;
     border-radius: 8px;
-    width: 45%;
+    margin: 0 10px;
+    width: 100%;
     text-align: center;
 }
 
@@ -81,10 +94,15 @@ h2 {
     display: none;
 }
 
+.form-section.active {
+    display: block;
+}
+
 .form-group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .form-group input[type="text"],
@@ -97,8 +115,8 @@ h2 {
 
 .form-group div {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    grid-column: span 2;
 }
 
 button[type="submit"] {
@@ -113,4 +131,10 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #e68a00;
+}
+
+h3, h4 {
+    grid-column: span 2;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
 }
