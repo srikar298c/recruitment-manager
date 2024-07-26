@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#">About Us</a>
+            <a href="#">Company</a>
+            <a href="#">Education</a>
+            <a href="#">Healthcare</a>
+            <a href="#">Internships</a>
+            <a href="#">Current Vacancies</a>
+            <a href="#">Login</a>
+            <a href="#" class="register-button">Register</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Register with Us..!</h2>
+        <form id="registrationForm">
+            <div class="tabs">
+                <button type="button" class="tab active" onclick="showForm('company')">Company</button>
+                <button type="button" class="tab" onclick="redirectToFreelancer()">Freelancer</button>
+            </div>
+            <div id="companyForm" class="form-section">
+                <h3>Company</h3>
+                <div class="form-group">
+                    <input type="text" id="companyName" name="companyName" placeholder="Name of the Company" required>
+                    <input type="text" id="directorName1" name="directorName1" placeholder="Name of the Director" required>
+                    <input type="text" id="directorName2" name="directorName2" placeholder="Name of the Director" required>
+                    <input type="text" id="address1" name="address1" placeholder="Address 1" required>
+                    <input type="text" id="address2" name="address2" placeholder="Address 2">
+                    <input type="text" id="city" name="city" placeholder="City" required>
+                    <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code" required>
+                    <input type="text" id="state" name="state" placeholder="State" required>
+                    <input type="text" id="country" name="country" placeholder="Country" required>
+                    <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                    <input type="text" id="alternatePhone" name="alternatePhone" placeholder="Alternate Phone">
+                    <div>
+                        <label>Registered Company:</label>
+                        <input type="radio" id="registeredYes" name="registeredCompany" value="Yes" required>
+                        <label for="registeredYes">Yes</label>
+                        <input type="radio" id="registeredNo" name="registeredCompany" value="No">
+                        <label for="registeredNo">No</label>
+                    </div>
+                    <input type="text" id="licenseNumber" name="licenseNumber" placeholder="License Number" required>
+                    <input type="text" id="websiteURL" name="websiteURL" placeholder="Website URL">
+                    <input type="text" id="instagram" name="instagram" placeholder="Instagram">
+                    <input type="text" id="twitter" name="twitter" placeholder="Twitter">
+                    <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn">
+                    <input type="text" id="facebook" name="facebook" placeholder="Facebook">
+                </div>
+                <div class="form-group">
+                    <h4>Person Details</h4>
+                    <input type="text" id="designation" name="designation" placeholder="Designation" required>
+                    <input type="text" id="personCountry" name="personCountry" placeholder="Country" required>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <input type="text" id="personAddress1" name="personAddress1" placeholder="Address 1" required>
+                    <input type="text" id="personAddress2" name="personAddress2" placeholder="Address 2">
+                    <input type="text" id="personCity" name="personCity" placeholder="City" required>
+                    <input type="text" id="personZipCode" name="personZipCode" placeholder="Zip Code" required>
+                    <input type="text" id="personState" name="personState" placeholder="State" required>
+                    <input type="text" id="personPhone" name="personPhone" placeholder="Phone" required>
+                    <input type="text" id="personAlternatePhone" name="personAlternatePhone" placeholder="Alternate Phone">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="createPassword" name="createPassword" placeholder="Create Password" required>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
