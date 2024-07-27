@@ -92,18 +92,25 @@
                             <label for="lastName">Last Name</label>
                             <input type="text" id="lastName" name="lastName">
                         </div>
-                        <div class="form-group">
-                            <label for="mobileNumber">Mobile Number</label>
-                            <input type="text" id="mobileNumber" name="mobileNumber">
-                          </div>
-                          <div class="form-group">
-                            <div class="WhatsApp">
-                            <label for="whatsAppNumber">WhatsApp Number</label>
-                            <label for="sameAsMobile"> same as mobile number</label>
-                            <input type="checkbox" id="sameAsMobile" name="sameAsMobile" onclick="copyMobileNumber(this)">
+                    
+                        <div class="form-group phone-inputs">
+                            <div class="input-wrapper">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
+                            </div>
                         </div>
-                            <input type="text" id="whatsAppNumber" name="whatsAppNumber">
-                          </div>
+                            <div class="form-group phone-inputs">
+                            <div class="input-wrapper">
+                                <label for="whatsAppNumber">WhatsApp Number</label>
+                                <input type="tel" id="whatsAppNumber" name="whatsAppNumber" placeholder="Enter your WhatsApp number">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="sameAsMobile" name="sameAsMobile" onchange="copyMobileNumber(this)">
+                                    <label for="sameAsMobile">Same as mobile number</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                          
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email">
@@ -111,33 +118,37 @@
 
                         <div class="form-group radio">
                             <label for="gender">Gender</label>
-                            <div>
+                            <div class="radio-group">
+                                <div class="radio-option">
                                 <input type="radio" id="male" name="gender" value="male">
                                 <label for="single">Male</label>
                             </div>
-                            <div>
-                                <input type="radio" id="female" name="gender" value="female">
+                            <div class="radio-option">
+                            <input type="radio" id="female" name="gender" value="female">
                                 <label for="married">Female</label>
                             </div>
                         </div>
+                        </div>
 
-                        <div class="form-group radio">
+                        <div class="form-group full-width">
                             <label>Marital Status</label>
-                            <div>
-                                <input type="radio" id="single" name="maritalStatus" value="single">
-                                <label for="single">Single</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="married" name="maritalStatus" value="married">
-                                <label for="married">Married</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="divorced" name="maritalStatus" value="divorced">
-                                <label for="divorced">Divorced</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="widowed" name="maritalStatus" value="widowed">
-                                <label for="widowed">Widowed</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="single" name="maritalStatus" value="single">
+                                    <label for="single">Single</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="married" name="maritalStatus" value="married">
+                                    <label for="married">Married</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="divorced" name="maritalStatus" value="divorced">
+                                    <label for="divorced">Divorced</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="widowed" name="maritalStatus" value="widowed">
+                                    <label for="widowed">Widowed</label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -181,9 +192,11 @@
                         </div>
                     </div>
                 </form>
-                <button type="button" id="nextButton">Next</button>
+                <div class="button-group">
+                    <button type="button" id="prevButton">Previous</button>
+                    <button type="button" id="nextButton">Next</button>
+                </div>
             </div>
-           
         </div>
     </div>
     <script src="../../Global Placements/projects/scripts.js"></script>

@@ -170,9 +170,10 @@ height: 20px;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .success-icon img {
     width: 80px;
@@ -432,52 +433,55 @@ padding: 5px;
 .form-header {
     display: flex;
     align-items: center;
+    width: 100%;
     margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .location-icon {
     font-size: 24px;
     margin-right: 10px;
+    color: #FF941F;
 }
 
 .person-header{
     display: block;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .form-nav {
     display: flex;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
+    margin-bottom: 30px;
+    background-color: #fff;
     border-radius: 25px;
     padding: 5px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-button {
     flex: 1;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     background: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     font-size: 14px;
     text-align: center;
-}
-.nav-button.active {
-    color: #FF941F;
-}
-.nav-button a{
-    text-decoration: none;
-    color: black;
+    color: #333;
 }
 
-.nav-button.active {
-    background-color: #ff9800;
-  
+.nav-button a{
+    text-decoration: none;
+    color: inherit;
 }
-.nav-button:hover {
-    background-color: #ff9800;
+.nav-button.active, .nav-button:hover {
+    background-color: #FF941F;
     color: white;
 }
 .nav-button:hover:not(.active) {
@@ -486,19 +490,315 @@ padding: 5px;
 
 .nav-button a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
 }
-
-
-
-
-
 .form-container {
+    min-width: 1000px;
     background-color: white;
-  border: none;
-    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.form-step {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+.form-group {
+    margin-bottom: 20px;
+}
+  
+
+.phone-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input[type="tel"] {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper input[type="tel"]:focus {
+  outline: none;
+  border-color: #FF941F;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox-wrapper label {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Custom checkbox styling */
+.checkbox-wrapper input[type="checkbox"] {
+    cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+  background-color: #FF941F;
+  border-color: #FF941F;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked::before {
+  content: '\2714';
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .phone-inputs {
+      flex-direction: row;
+  }
+
+  .input-wrapper {
+      flex: 1;
+  }
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+  
+.form-group.row-group {
+    display: contents;
+  }
+  
+.form-group.row-group > * {
+    margin-bottom: 0;
+}
+
+.radio-group {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 15px;
+    justify-content: space-evenly;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.radio-option label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Custom radio button styling */
+.radio-option input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+    border-color: #FF941F;
+    background-color: #FF941F;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .radio-group {
+        flex-direction: column;
+    }
+    
+    .radio-option {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+.main-content input, .main-content select, .main-content textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+input[type="date"]{
+    cursor: pointer;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #FF941F;
+}
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+
+}
+
+.form-group:has(input[type="radio"]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group:has(input[type="radio"]) > div {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="date"] {
+    position: relative;
+    
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.add-button {
+    background: none;
+    border: none;
+    color: #6200ee;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.date-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.date-range > div{
+    flex:1;
+    margin-right: 10px;
+    cursor: pointer;
+}
+  .button-group {
+            position: relative;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            margin-top: 25px;
+            justify-content: space-around;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 120px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button-group button:active {
+            background-color: #004494;
+        }
+
+        .button-group #prevButton {
+            background-color: #6c757d;
+        }
+
+        .button-group #prevButton:hover {
+            background-color: #5a6268;
+        }
+
+        .button-group #prevButton:active {
+            background-color: #494e52;
+        }
 
 .document-table {
     width: 100%;
@@ -574,143 +874,6 @@ padding: 5px;
     text-align: center;
     margin: 20px auto 0;
 }
-
-.form-step {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .form-group.full-width {
-    grid-column: span 2;
-  }
-  
-  .form-group.row-group {
-    display: contents;
-  }
-  
-  .form-group.row-group > * {
-    margin-bottom: 0;
-  }
-  .button-group{
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-  }
-  .button-group button{
-    width: 70px;
-    background-color:  #521BFF;
-    color: wheat;
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    
-  }
-  .checkbox-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  .checkbox-group label {
-    margin-left: 5px;
-  }
-  
-.form-group.sameasmobile{
-    display: flex;
-    justify-content: space-around;
-}
-.WhatsApp{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.main-content input, .main-content select, .main-content textarea {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-}
-
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-select {
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px ;
-    background-size: 20px;
-}
-
-.form-group:has(input[type="radio"]) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.form-group:has(input[type="radio"]) > div {
-    display: flex;
-    align-items: center;
-}
-
-input[type="radio"] {
-    margin-right: 5px;
-}
-
-input[type="date"] {
-    position: relative;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.add-button {
-    background: none;
-    border: none;
-    color: #6200ee;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.date-range {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.date-range > div{
-    flex:1;
-    margin-right: 10px;
-}
-
-
-
-
-
 .main-content_header{
     display: flex;
     align-items: center;
@@ -1187,17 +1350,22 @@ select {
     padding: 0;
 }
 .submit-btn {
-    grid-column: 1 / -1;
+    position: relative;
+    top: 25px;
     padding: 10px;
     background-color: #5e17eb;
-    color: white;
     border: none;
+    width: 120px;
+    
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    position: absolute;
-    left: 50%;
+    font-size: 16px;    
 }
+.submit-btn a {
+text-decoration: none;
+color: white;
+}
+
 .terms-content {
     padding: 20px;
 }
