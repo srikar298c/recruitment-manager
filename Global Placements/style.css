@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 /* Scrollbar Styles for Webkit Browsers */
 ::-webkit-scrollbar {
     width: 12px;
@@ -17,7 +19,7 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "MontSerrat", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -172,8 +174,8 @@ height: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 .success-icon img {
     width: 80px;
@@ -884,6 +886,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0;
     font-size: 1.5rem;
     color: #333;
+    left: 0;
 }
 .service-request-btn {
     padding: 10px 20px;
@@ -1039,7 +1042,9 @@ tbody tr:hover {
 
 /* Table Container */
 #candidateTable {
-    width: 100%;
+    min-width: 1000px;
+    max-width: 1100px;
+
     border-collapse: collapse;
     margin-top: 20px;
     backdrop-filter: blur(10px);
@@ -1192,7 +1197,7 @@ select {
   margin-bottom: 30px;
 }
 .filter-btn {
-    padding: 0.5em 1em;
+    padding: 0.5em ;
     border: none;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
