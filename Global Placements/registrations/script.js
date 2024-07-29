@@ -18,3 +18,19 @@ document.addEventListener('DOMContentLoaded', function() {
         companyForm.style.display = 'none';
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const educationDropdown = document.getElementById("education-dropdown");
+    const educationMenuLink = educationDropdown.previousElementSibling;
+
+    educationMenuLink.addEventListener("mouseenter", function () {
+        educationDropdown.style.display = "block";
+    });
+
+    educationMenuLink.addEventListener("mouseleave", function () {
+        educationDropdown.style.display = "none";
+    });
+
+    educationDropdown.addEventListener("mouseleave", function () {
+        educationDropdown.style.display = "none";
+    });
+});

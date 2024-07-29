@@ -24,10 +24,24 @@ nav {
     margin: 0 ;
 }
 
-.logo {
-    height: 40px;
+
+    .logo {
+        width: 219px;
+        height: auto;
+        cursor: pointer;
+        
+    }
     
-}
+    a {
+        text-decoration: none;
+        /* color: black; */
+        color: black;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
 
 .nav-links a {
     color: #333;
@@ -35,6 +49,52 @@ nav {
     padding: 10px 15px;
     font-weight: bold;
 }
+.nav-links a i{
+    color: black;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.nav-links ul{
+    display: flex;
+}
+.nav-links ul li{
+    position: relative;
+   
+}
+.nav-links ul li a::after,
+.nav-links_dropdown ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #333;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+
+.nav-links ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.4s;
+    color: #333;
+    border-radius: 10px;
+}
+.nav-links ul li :hover{
+    border-radius: 10px;
+}
+.nav-links_dropdown{
+    display: none;
+}
+.nav-links ul li:hover .nav-links_dropdown ul{
+    display: block;
+    width: 220px;
+    /* padding: 3px 3px; */
+    font-weight: 700;
+}
+
 
 .auth-buttons a {
     text-decoration: none;
