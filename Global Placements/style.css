@@ -241,6 +241,9 @@ p {
 .user-icons a:hover{
     color: orange;
 }
+.profile-icon.active a{
+    color: orange;
+}
 
 /**********************projects.html****************/
 .country-filters {
@@ -771,7 +774,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
         .button-group button {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: rgb(52, 211, 52);
             color: white;
             border: none;
             border-radius: 5px;
@@ -782,7 +785,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         }
 
         .button-group button:hover {
-            background-color: #0056b3;
+            background-color: rgb(17, 171, 17);
             transform: scale(1.05);
         }
 

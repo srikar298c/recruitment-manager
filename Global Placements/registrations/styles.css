@@ -1,6 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Scrollbar Styles for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: "MontSerrat", sans-serif;
+    background-color: #FFF2F2;
     margin: 0;
     padding-top: 80px;
 }
@@ -10,10 +31,12 @@ nav {
     top: 0;
     width: 100%;
     background-color: #fff;
-    padding: 10px 0;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    overflow: hidden;
 }
 
 .nav-container {
@@ -21,86 +44,100 @@ nav {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin: 0 ;
+    margin: 0 10px;
+}
+.logo {
+    width: 219px;
+    height: auto;
+    cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
-    .logo {
-        width: 219px;
-        height: auto;
-        cursor: pointer;
-        
-    }
-    
-    a {
-        text-decoration: none;
-        /* color: black; */
-        color: black;
-    }
-    
-    ul {
-        list-style: none;
-    }
-    
+ul {
+    list-style: none;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links ul li {
+    position: relative;
+    margin-right: 20px;
+}
 
 .nav-links a {
     color: #333;
-    text-decoration: none;
-    padding: 10px 15px;
     font-weight: bold;
 }
-.nav-links a i{
+
+.nav-links a i {
     color: black;
     margin-left: 10px;
     font-size: 20px;
 }
 
-.nav-links ul{
-    display: flex;
-}
-.nav-links ul li{
-    position: relative;
-   
-}
 .nav-links ul li a::after,
-.nav-links_dropdown ul li a::after{
+.nav-links_dropdown ul li a::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 1.5px;
-    background: #333;
+    background-color: black;
     transform: scaleX(0);
-    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); 
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.nav-links ul li a:hover::after{
+.nav-links ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left center;
     transition-duration: 0.4s;
-    color: #333;
+    border-radius: 10px;
+    color: black;
+}
+
+.nav-links ul li :hover {
     border-radius: 10px;
 }
-.nav-links ul li :hover{
-    border-radius: 10px;
-}
-.nav-links_dropdown{
+
+.nav-links_dropdown {
     display: none;
+
 }
-.nav-links ul li:hover .nav-links_dropdown ul{
+
+.nav-links ul li:hover .nav-links_dropdown {
     display: block;
-    width: 220px;
-    /* padding: 3px 3px; */
-    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.nav-links ul li:hover .nav-links_dropdown ul {
+    display: block;
+    width: 180px;
+}
+
+.nav-links ul li:hover .nav-links_dropdown ul li {
+    width: auto;
+    padding: 3px 3px;
+    font-weight: 400;
+}
+
 
 
 .auth-buttons a {
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
-    font-weight: bold;
 }
 
 .login-button {
@@ -113,13 +150,14 @@ nav {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #FFF2F2;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 900px;
     margin: 20px auto;
+
 }
 
 h1 {
@@ -180,7 +218,7 @@ select {
     border-radius: 5px;
     font-size: 14px;
     margin-right: 15px;
-    
+
 }
 
 select {
@@ -205,4 +243,61 @@ select {
 
 .submit-button:hover {
     background-color: #e68a00;
+}
+
+.congratulations-section {
+    background-color: #FFF2F2;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+
+}
+
+.check-icon {
+    background-color: #FFA500;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.check-icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.congratulations-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.congratulations-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.highlight {
+    color: #6A5ACD;
+    font-weight: bold;
+}
+
+.go-back-btn {
+    background-color: transparent;
+    border: 1px solid #FFA500;
+    color: #FFA500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.go-back-btn:hover {
+    background-color: #FFA500;
+    color: white;
 }
