@@ -108,29 +108,142 @@ document.addEventListener('DOMContentLoaded', () => {
     uploadButtons.forEach(button => {
       button.addEventListener('click', function() {
         uploadForm.classList.remove('hidden');
-        // You might want to populate the country here based on the selected job
+        
         document.getElementById('selected-country').textContent = 'OMAN'; // Example
       });
     });
     
-    function showSection(index) {
-      formSections.forEach((section, i) => {
-        section.classList.toggle('active', i === index);
-      });
-      navButtons.forEach((btn, i) => {
-        btn.classList.toggle('active', i === index);
-      });
-      prevBtn.classList.toggle('hidden', index === 0);
-      nextBtn.classList.toggle('hidden', index === formSections.length - 1);
-      submitBtn.classList.toggle('hidden', index !== formSections.length - 1);
-    }
-    
-    navButtons.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        currentSection = index;
-        showSection(currentSection);
-      });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const formContent = document.getElementById('formContent');
+            let currentPage = 'personal';
+
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const page = this.getAttribute('data-page');
+                    loadContent(page);
+                });
+            });
+        function loadContent(page) {
+                currentPage = page;
+                updateNavButtons();
+
+                let content = '';
+                switch(page) {
+                    case 'personal':
+                        content = `
+                            <div class="person-header"><h2>Personal Details</h2></div>
+                            <div class="form-container">
+                                <form id="personalDetailsForm" class="form">
+                                    <div class="form-step">
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" id="firstName" name="firstName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" name="lastName" required>
+                                        </div>
+                                        <!-- Add more personal details fields here -->
+                                    </div>
+                                </form>
+                            </div>
+                        `;
+                        break;
+                    case 'experience':
+                        content = `
+                            <div class="person-header"><h2>Experience</h2></div>
+                            <div class="form-container">
+                                <form id="experienceForm" class="form">
+                                    <div class="form-step">
+                                        <div class="form-group">
+                                            <label for="registrationCouncil">Current Registration Council*</label>
+                                            <select id="registrationCouncil" required>
+                                                <option value="">Select</option>
+                                                <!-- Add options here -->
+                                            </select>
+                                            <button type="button" class="add-button">+ Add Registration</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="department">Department</label>
+                                            <select id="department">
+                                                <option value="">Select</option>
+                                                <!-- Add options here -->
+                                            </select>
+                                        </div>
+                                        <!-- Add more experience fields here -->
+                                    </div>
+                                </form>
+                            </div>
+                        `;
+                        break;
+                    case 'documents':
+                        content = `
+                            <div class="person-header"><h2>Documents</h2></div>
+                            <div class="form-container">
+                                <table class="document-table">
+                                    <tr>
+                                        <td>Curriculum Vitae (CV)*</td>
+                                        <td class="file-input">
+                                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
+                                            <span>Choose File( pdf or document, upto 2MB)</span>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="upload-btn" data-document="Curriculum Vitae">Upload</button>
+                                            <button type="button" class="add-more-btn" data-document="Curriculum Vitae">Add More</button>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more document rows here -->
+                                </table>
+                            </div>
+                        `;
+                        break;
+                    case 'review':
+                        content = `
+                            <div class="person-header"><h2>Review</h2></div>
+                            <div class="form-container">
+                                <form id="reviewForm" class="form">
+                                    <!-- Add review fields here -->
+                                </form>
+                            </div>
+                            <button class="submit-btn">Submit</button>
+                        `;
+                        break;
+                    default:
+                        content = '<p>Page not found</p>';
+                }
+
+                formContent.innerHTML = content;
+            }
+        function updateNavButtons() {
+                navButtons.forEach(button => {
+                    button.classList.remove('active');
+                    if (button.getAttribute('data-page') === currentPage) {
+                        button.classList.add('active');
+                    }
+                });
+            }
+  document.getElementById('prevButton').addEventListener('click', function() {
+                const pages = ['personal', 'experience', 'documents', 'review'];
+                const currentIndex = pages.indexOf(currentPage);
+                if (currentIndex > 0) {
+                    loadContent(pages[currentIndex - 1]);
+                }
+  });
+        document.getElementById('nextButton').addEventListener('click', function() {
+                const pages = ['personal', 'experience', 'documents', 'review'];
+                const currentIndex = pages.indexOf(currentPage);
+                if (currentIndex < pages.length - 1) {
+                    loadContent(pages[currentIndex + 1]);
+                }
+            });
+
+            // Initial load
+            loadContent('personal');
     });
+        
     function copyMobileNumber(checkbox) {
       var mobileNumber = document.getElementById('mobileNumber').value;
       var whatsappNumberField = document.getElementById('whatsAppNumber');

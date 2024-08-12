@@ -67,138 +67,25 @@
         </div>
         
          
-       
-        <div class="main-content">
-            <div class="form-header">
-                <span class="location-icon">📍</span>
-                <h2>Country</h2>
-            </div>
-            <div class="form-nav">
-                <div class="nav-button " data-page="personal"><a href="../../Global Placements/projects/person-details.html">Personal Details </a></div>
-                <div class="nav-button " data-page="experience"><a href="../../Global Placements/projects/experience.html">Experience </a></div>
-                <div class="nav-button" data-page="documents"><a href="../../Global Placements/projects/documents.html">Documents</a></div>
-                <div class="nav-button" data-page="review"><a href="../../Global Placements/projects/reviews.html">Review </a></div>
-            </div>
-            <div class="person-header"><h2>Personal Details</h2></div>
-            <div class="form-container">
-                <form id="form1" class="form">
-                    <div class="form-step">
-                        
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName">
-                        </div>
-                    
-                        <div class="form-group phone-inputs">
-                            <div class="input-wrapper">
-                                <label for="mobileNumber">Mobile Number</label>
-                                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
-                            </div>
-                        </div>
-                            <div class="form-group phone-inputs">
-                            <div class="input-wrapper">
-                                <label for="whatsAppNumber">WhatsApp Number</label>
-                                <input type="tel" id="whatsAppNumber" name="whatsAppNumber" placeholder="Enter your WhatsApp number">
-                                <div class="checkbox-wrapper">
-                                    <input type="checkbox" id="sameAsMobile" name="sameAsMobile" onchange="copyMobileNumber(this)">
-                                    <label for="sameAsMobile">Same as mobile number</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                          
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-
-                        <div class="form-group radio">
-                            <label for="gender">Gender</label>
-                            <div class="radio-group">
-                                <div class="radio-option">
-                                <input type="radio" id="male" name="gender" value="male">
-                                <label for="single">Male</label>
-                            </div>
-                            <div class="radio-option">
-                            <input type="radio" id="female" name="gender" value="female">
-                                <label for="married">Female</label>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label>Marital Status</label>
-                            <div class="radio-group">
-                                <div class="radio-option">
-                                    <input type="radio" id="single" name="maritalStatus" value="single">
-                                    <label for="single">Single</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="married" name="maritalStatus" value="married">
-                                    <label for="married">Married</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="divorced" name="maritalStatus" value="divorced">
-                                    <label for="divorced">Divorced</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="widowed" name="maritalStatus" value="widowed">
-                                    <label for="widowed">Widowed</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of Birth</label>
-                            <input type="date" id="dob" name="dob">
-                        </div>
-                        <div class="form-group">
-                            <label for="nationality">Nationality</label>
-                            <select id="nationality" name="nationality">
-                                <option value="">Select your country</option>
-                                <option value="us">United States</option>
-                                <option value="ca">Canada</option>
-                                <option value="uk">United Kingdom</option>
-                                <!-- Add more options as needed -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="passportNumber">Passport Number</label>
-                            <input type="text" id="passportNumber" name="passportNumber">
-                        </div>
-                        <div class="form-group">
-                            <label for="dateOfExpiry">Date of Expiry</label>
-                            <input type="date" id="dateOfExpiry" name="dateOfExpiry">
-                        </div>
-                        <div class="form-group">
-                            <label for="highestQualification">Highest Qualification</label>
-                            <select id="highestQualification" name="highestQualification">
-                                <option value="">Select</option>
-                                <option value="highschool">High School</option>
-                                <option value="bachelors">Bachelor's</option>
-                                <option value="masters">Master's</option>
-                                <option value="phd">PhD</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="yearOfPassing">Year of Passing</label>
-                            <select id="yearOfPassing" name="yearOfPassing">
-                                <option value="">Select</option>
-                                <!-- Add more options as needed -->
-                            </select>
-                        </div>
-                    </div>
-                </form>
-                <div class="button-group">
-                    <button type="button" id="prevButton">Previous</button>
-                    <button type="button" id="nextButton">Next</button>
-                </div>
-            </div>
-        </div>
+       <div class="main-content">
+    <div class="form-header">
+        <span class="location-icon">📍</span>
+        <h2 id="content-title">Country</h2>
     </div>
+    <div class="form-nav">
+        <div class="nav-button" data-page="personal">Personal Details</div>
+        <div class="nav-button" data-page="experience">Experience</div>
+        <div class="nav-button" data-page="documents">Documents</div>
+        <div class="nav-button" data-page="review">Review</div>
+    </div>
+ <div id="formContent"></div>
+        <div class="button-group">
+            <button type="button" id="prevButton">Previous</button>
+            <button type="button" id="nextButton">Next</button>
+        </div>
+</div>
+    </div>
+    
     <script src="../../Global Placements/projects/scripts.js"></script>
 </body>
 </html>
