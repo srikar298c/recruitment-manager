@@ -452,7 +452,7 @@ padding: 5px;
     color: #FF941F;
 }
 
-.person-header{
+.form-title-header{
     display: block;
     margin-bottom: 30px;
     width: 100%;
@@ -1360,14 +1360,15 @@ select {
 .submit-btn {
     position: relative;
     top: 25px;
+    left: 50%;
     padding: 10px;
     background-color: #5e17eb;
     border: none;
     width: 120px;
-    
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;    
+    font-size: 16px;   
+    color: white; 
 }
 .submit-btn a {
 text-decoration: none;
