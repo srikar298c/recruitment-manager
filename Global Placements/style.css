@@ -762,17 +762,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 10px;
     cursor: pointer;
 }
-  .button-group {
+  .form-navigation {
             position: relative;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            margin-top: 25px;
+            margin-top: 50px;
             justify-content: space-around;
         }
 
-        .button-group button {
+        .form-navigation button {
             padding: 10px 20px;
             background-color: rgb(52, 211, 52);
             color: white;
@@ -784,101 +784,90 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .button-group button:hover {
+        .form-navigation button:hover {
             background-color: rgb(17, 171, 17);
             transform: scale(1.05);
         }
 
-        .button-group button:active {
+        .form-navigation button:active {
             background-color: #004494;
         }
 
-        .button-group #prevButton {
+        .form-navigation #prevButton {
             background-color: #6c757d;
         }
 
-        .button-group #prevButton:hover {
+        .form-navigation #prevButton:hover {
             background-color: #5a6268;
         }
 
-        .button-group #prevButton:active {
+        .form-navigation #prevButton:active {
             background-color: #494e52;
         }
 
-.document-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+  .document-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
 
+    .document-table th, .document-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
 
+    .document-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
 
-.document-table td {
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #333;
-}
+    .document-table tr:hover {
+        background-color: #f1f1f1;
+    }
 
-.document-table td:first-child {
-    width: 30%;
-}
+    .document-table th {
+        background-color: #4CAF50;
+        color: white;
+    }
 
-.file-input {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border:none;
-    
-    padding: 8px 10px;
-    position: relative;
-}
+    .file-input {
+        position: relative;
+    }
 
-.file-input span {
-    flex: 1;
-    font-size: 12px;
-    color: #888;
-}
+    .file-input input[type="file"] {
+        display: none;
+    }
 
-.file-input::after {
-    content: '▼';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 12px;
-}
+    .file-input span {
+        display: inline-block;
+        padding: 8px 12px;
+        color: black;
+        transition: background-color 0.3s;
+    }
 
-.download-btn {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: #333;
-    margin-left: 10px;
-}
+   
 
-.upload-btn {
-    padding: 8px 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-}
+    .upload-btn, .add-more-btn {
+        padding: 8px 16px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-.add-document-btn {
-    display: block;
-    width: calc(100% - 40px);
-    padding: 10px;
-    background: none;
-    border: none;
-    color: #6200ee;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    margin: 20px auto 0;
-}
+    .upload-btn:hover, .add-more-btn:hover {
+        background-color: #45a049;
+    }
+
+    .add-more-btn {
+        background-color:  #1e194f;;
+    }
+
+    .add-more-btn:hover {
+        background-color: #1e194f;
+    }
 .main-content_header{
     display: flex;
     align-items: center;
