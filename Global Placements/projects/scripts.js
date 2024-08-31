@@ -141,40 +141,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Document upload functionality
-    const documentTable = document.querySelector('.document-table');
+ // Document upload functionality
+const documentTable = document.querySelector('.document-table');
 
-    documentTable.addEventListener('click', (e) => {
-        if (e.target.classList.contains('upload-btn')) {
-            const documentType = e.target.getAttribute('data-document');
-            document.getElementById(`${documentType}-file`).click();
-        } else if (e.target.classList.contains('add-more-btn')) {
-            addMoreDocuments(e.target.getAttribute('data-document'));
-        }
-    });
+documentTable.addEventListener('click', (e) => {
+    if (e.target.classList.contains('upload-btn')) {
+        const row = e.target.closest('tr');
+        const fileInput = row.querySelector('input[type="file"]');
+        fileInput.click();
+    } else if (e.target.classList.contains('add-more-btn')) {
+        addMoreDocuments(e.target.getAttribute('data-document'));
+    } else if (e.target.classList.contains('remove-file')) {
+        removeFile(e.target);
+    }
+});
 
-    documentTable.addEventListener('change', (e) => {
-        if (e.target.type === 'file') {
-            handleFileUpload(e.target);
-        }
-    });
+documentTable.addEventListener('change', (e) => {
+    if (e.target.type === 'file') {
+        handleFileUpload(e.target);
+    }
+});
 
-    function handleFileUpload(input) {
-        const file = input.files[0];
-        if (file) {
-            if (isValidFile(file)) {
-                console.log(`File ${file.name} selected for upload.`);
-                // Here you would typically handle the file upload to your server
-            } else {
-                alert('Please upload a .pdf, .doc, or .docx file not exceeding 2MB.');
-                input.value = ''; // Clear the input
-            }
+function handleFileUpload(input) {
+    const file = input.files[0];
+    const row = input.closest('tr');
+    const fileNameSpan = row.querySelector('.file-name');
+    const removeButton = row.querySelector('.remove-file');
+
+    if (file) {
+        if (isValidFile(file)) {
+            console.log(`File ${file.name} selected for upload.`);
+            fileNameSpan.textContent = file.name;
+            removeButton.style.display = 'inline-block';
+            // Here you would typically handle the file upload to your server
+        } else {
+            alert('Please upload a .pdf, .doc, or .docx file not exceeding 2MB.');
+            input.value = ''; // Clear the input
+            fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 2MB)';
+            removeButton.style.display = 'none';
         }
     }
+}
 
-    function isValidFile(file) {
-        const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-        return validTypes.includes(file.type) && file.size <= 2 * 1024 * 1024;
-    }
+function isValidFile(file) {
+    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    return validTypes.includes(file.type) && file.size <= 2 * 1024 * 1024;
+}
 
 function addMoreDocuments(documentType) {
     const newRow = document.createElement('tr');
@@ -185,7 +197,8 @@ function addMoreDocuments(documentType) {
         <td></td>
         <td class="file-input">
             <input type="file" id="${documentType}-file-${rowCount}" name="${documentType}[]" accept=".pdf,.doc,.docx" style="display: none;">
-            <span>Choose File (pdf, doc, docx, up to 2MB)</span>
+            <span class="file-name">Choose File (pdf, doc, docx, up to 2MB)</span>
+            <button type="button" class="remove-file" style="display: none;">X</button>
         </td>
         <td>
             <button type="button" class="upload-btn" data-document="${documentType}">Upload</button>
@@ -196,6 +209,27 @@ function addMoreDocuments(documentType) {
     const lastRow = documentTable.querySelector(`[data-document="${documentType}"]:last-of-type`);
     lastRow.parentNode.insertBefore(newRow, lastRow.nextSibling);
 }
+
+function removeFile(removeButton) {
+    const row = removeButton.closest('tr');
+    const fileInput = row.querySelector('input[type="file"]');
+    const fileNameSpan = row.querySelector('.file-name');
+
+    fileInput.value = ''; // Clear the file input
+    fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 2MB)';
+    removeButton.style.display = 'none';
+}
+
+// Initialize the form
+showSection('personal');
+
+// Copy mobile number functionality
+document.getElementById('mobileNumber').addEventListener('input', () => {
+    if (document.getElementById('sameAsMobile').checked) {
+        copyMobileNumber(document.getElementById('sameAsMobile'));
+    }
+});
+
 
     // Initialize the form
     showSection('personal');
