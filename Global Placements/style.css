@@ -810,9 +810,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         border-collapse: collapse;
         margin-bottom: 20px;
     }
-
+    
     .document-table th, .document-table td {
         padding: 12px 15px;
+        border-radius: 10px;
         text-align: left;
         border: 1px solid #ddd;
     }
@@ -823,6 +824,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     .document-table tr:hover {
         background-color: #f1f1f1;
+    }
+    .document-table tr {
+        background-color: #f1f1f1;
+        border-radius: 10px;
     }
 
     .document-table th {
@@ -850,7 +855,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .upload-btn, .add-more-btn {
         padding: 8px 16px;
         border: none;
-        background-color: #4CAF50;
+        background-color: #e68a00;
         color: white;
         cursor: pointer;
         border-radius: 4px;
@@ -858,7 +863,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     .upload-btn:hover, .add-more-btn:hover {
-        background-color: #45a049;
+        background-color: #ff7f00;
     }
 
     .add-more-btn {
@@ -868,6 +873,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .add-more-btn:hover {
         background-color: #1e194f;
     }
+.remove-file{
+    color: red;
+}
 .main-content_header{
     display: flex;
     align-items: center;
