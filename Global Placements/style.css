@@ -774,7 +774,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
         .form-navigation button {
             padding: 10px 20px;
-            background-color: rgb(52, 211, 52);
+            background-color: #e68a00;
             color: white;
             border: none;
             border-radius: 5px;
@@ -785,7 +785,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         }
 
         .form-navigation button:hover {
-            background-color: rgb(17, 171, 17);
+            background-color: #ff7f00;
             transform: scale(1.05);
         }
 
@@ -794,16 +794,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         }
 
         .form-navigation #prevButton {
-            background-color: #6c757d;
+            background-color: #1e194f;
         }
 
         .form-navigation #prevButton:hover {
-            background-color: #5a6268;
+            background-color: #16123a;
         }
 
-        .form-navigation #prevButton:active {
-            background-color: #494e52;
-        }
+       
 
   .document-table {
         width: 100%;
@@ -867,7 +865,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     .add-more-btn {
-        background-color:  #1e194f;;
+        background-color:  #1e194f;
     }
 
     .add-more-btn:hover {

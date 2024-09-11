@@ -71,18 +71,24 @@
                 </div>
             </div>
             <div class="filter-container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="ALL">ALL</button>
-                <button class="filter-btn" data-filter="Awaiting Documents">Awaiting Documents</button>
-                <button class="filter-btn" data-filter="Profile Reject">Profile Reject</button>
-                <button class="filter-btn" data-filter="In Progress">In Progress</button>
-                <button class="filter-btn" data-filter="On Hold">On Hold</button>
-                <button class="filter-btn" data-filter="Drop Before Interview">Drop Before Interview</button>
-                <button class="filter-btn" data-filter="Interview Failed">Interview Failed</button>
-                <button class="filter-btn" data-filter="Interview Passed">Interview Passed</button>
-                <button class="filter-btn" data-filter="Declined the Offer">Declined the Offer</button>
-                <button class="filter-btn" data-filter="Documentation">Documentation</button>
-                <button class="filter-btn" data-filter="Travelled">Travelled</button>
+            <div class="filter-group">
+                <label for="countryFilter">Project Name</label>
+                <select id="countryFilter">
+                    <option value="">All Project</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="statusFilter">Client </label>
+                <select id="statusFilter">
+                    <option value="">Client Name</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="statusFilter">Client Status:</label>
+                <select id="statusFilter">
+                    <option value="">Status</option>
+                </select>
             </div>
         </div>
             <table id="candidateTable">
