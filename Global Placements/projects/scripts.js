@@ -63,6 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="detail-row"><span class="detail-label">Age:</span><span class="detail-value">${job.details.age_range}</span></div>
                             <div class="detail-row"><span class="detail-label">Vacancies:</span><span class="detail-value">${job.details.vacancies}</span></div>
                             <div class="detail-row"><span class="detail-label">Perks:</span><span class="detail-value">${job.details.perks.join('<br>')}</span></div>
+                            <div class="client-name">
+            <span class="icon details-icon" data-popup="popup-dubai-007">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
+                    <g fill="currentColor">
+                        <path d="M25 5h-.17v2H25a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h.17V5H7a3 3 0 0 0-3 3v20a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3" />
+                        <path d="M23 3h-3V0h-8v3H9v6h14zm-2 4H11V5h3V2h4v3h3z" />
+                        <path d="M10 13h12v2H10zm0 5h12v2H10zm0 5h12v2H10z" class="ouiIcon__fillSecondary" />
+                    </g>
+                </svg>
+            </span>
+            Client 1
+        </div>
+        
                         </div> 
                     </div>
                 </div>
@@ -140,86 +153,129 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentIndex < pages.length - 1) showSection(pages[currentIndex + 1]);
     });
 
-    // Document upload functionality
- // Document upload functionality
 const documentTable = document.querySelector('.document-table');
 
-documentTable.addEventListener('click', (e) => {
-    if (e.target.classList.contains('upload-btn')) {
-        const row = e.target.closest('tr');
-        const fileInput = row.querySelector('input[type="file"]');
-        fileInput.click();
-    } else if (e.target.classList.contains('add-more-btn')) {
-        addMoreDocuments(e.target.getAttribute('data-document'));
-    } else if (e.target.classList.contains('remove-file')) {
-        removeFile(e.target);
-    }
-});
+    documentTable.addEventListener('click', (e) => {
+        if (e.target.classList.contains('upload-btn')) {
+            const row = e.target.closest('tr');
+            const fileInput = row.querySelector('input[type="file"]');
+            fileInput.click();
+        } else if (e.target.classList.contains('add-more-btn')) {
+            addMoreDocuments(e.target.getAttribute('data-document'));
+        } else if (e.target.classList.contains('remove-file')) {
+            removeFile(e.target);
+        } else if (e.target.classList.contains('edit-filename')) {
+            toggleFilenameEdit(e.target);
+        }
+    });
 
-documentTable.addEventListener('change', (e) => {
-    if (e.target.type === 'file') {
-        handleFileUpload(e.target);
-    }
-});
+    documentTable.addEventListener('change', (e) => {
+        if (e.target.type === 'file') {
+            handleFileUpload(e.target);
+        }
+    });
 
-function handleFileUpload(input) {
-    const file = input.files[0];
-    const row = input.closest('tr');
-    const fileNameSpan = row.querySelector('.file-name');
-    const removeButton = row.querySelector('.remove-file');
+    documentTable.addEventListener('keyup', (e) => {
+        if (e.target.classList.contains('file-name-input') && e.key === 'Enter') {
+            updateFilename(e.target);
+        }
+    });
 
-    if (file) {
-        if (isValidFile(file)) {
-            console.log(`File ${file.name} selected for upload.`);
-            fileNameSpan.textContent = file.name;
-            removeButton.style.display = 'inline-block';
-            // Here you would typically handle the file upload to your server
-        } else {
-            alert('Please upload a .pdf, .doc, or .docx file not exceeding 2MB.');
-            input.value = ''; // Clear the input
-            fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 2MB)';
-            removeButton.style.display = 'none';
+    function handleFileUpload(input) {
+        const file = input.files[0];
+        const row = input.closest('tr');
+        const fileNameSpan = row.querySelector('.file-name');
+        const fileNameInput = row.querySelector('.file-name-input');
+        const removeButton = row.querySelector('.remove-file');
+        const editButton = row.querySelector('.edit-filename');
+
+        if (file) {
+            if (isValidFile(file)) {
+                console.log(`File ${file.name} selected for upload.`);
+                fileNameSpan.textContent = file.name;
+                fileNameInput.value = file.name;
+                removeButton.style.display = 'inline-block';
+                editButton.style.display = 'inline-block';
+                // Here you would typically handle the file upload to your server
+            } else {
+                alert('Please upload a .pdf, .doc, or .docx file not exceeding 1MB.');
+                input.value = ''; // Clear the input
+                fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 1MB)';
+                removeButton.style.display = 'none';
+                editButton.style.display = 'none';
+            }
         }
     }
-}
 
-function isValidFile(file) {
-    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-    return validTypes.includes(file.type) && file.size <= 2 * 1024 * 1024;
-}
+    function isValidFile(file) {
+        const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        return validTypes.includes(file.type) && file.size <= 1 * 1024 * 1024;
+    }
 
-function addMoreDocuments(documentType) {
-    const newRow = document.createElement('tr');
-    const rowCount = documentTable.querySelectorAll(`[data-document="${documentType}"]`).length;
+    function addMoreDocuments(documentType) {
+        const newRow = document.createElement('tr');
+        const rowCount = documentTable.querySelectorAll(`[data-document="${documentType}"]`).length;
 
-    newRow.setAttribute('data-document', documentType);
-    newRow.innerHTML = `
-        <td></td>
-        <td class="file-input">
-            <input type="file" id="${documentType}-file-${rowCount}" name="${documentType}[]" accept=".pdf,.doc,.docx" style="display: none;">
-            <span class="file-name">Choose File (pdf, doc, docx, up to 2MB)</span>
-            <button type="button" class="remove-file" style="display: none;">X</button>
-        </td>
-        <td>
-            <button type="button" class="upload-btn" data-document="${documentType}">Upload</button>
-        </td>
-    `;
+        newRow.setAttribute('data-document', documentType);
+        newRow.innerHTML = `
+            <td></td>
+            <td class="file-input">
+                <input type="file" id="${documentType}-file-${rowCount}" name="${documentType}[]" accept=".pdf,.doc,.docx" style="display: none;">
+                <span class="file-name">Choose File (pdf, doc, docx, up to 1MB)</span>
+                <input type="text" class="file-name-input">
+                <button type="button" class="edit-filename">Edit</button>
+                <button type="button" class="remove-file" style="display: none;">X</button>
+            </td>
+            <td>
+                <button type="button" class="upload-btn" data-document="${documentType}">Upload</button>
+            </td>
+        `;
 
-    // Find the last row that matches the document type and insert the new row after it
-    const lastRow = documentTable.querySelector(`[data-document="${documentType}"]:last-of-type`);
-    lastRow.parentNode.insertBefore(newRow, lastRow.nextSibling);
-}
+        // Find the last row that matches the document type and insert the new row after it
+        const lastRow = documentTable.querySelector(`[data-document="${documentType}"]:last-of-type`);
+        lastRow.parentNode.insertBefore(newRow, lastRow.nextSibling);
+    }
 
-function removeFile(removeButton) {
-    const row = removeButton.closest('tr');
-    const fileInput = row.querySelector('input[type="file"]');
-    const fileNameSpan = row.querySelector('.file-name');
+    function removeFile(removeButton) {
+        const row = removeButton.closest('tr');
+        const fileInput = row.querySelector('input[type="file"]');
+        const fileNameSpan = row.querySelector('.file-name');
+        const fileNameInput = row.querySelector('.file-name-input');
+        const editButton = row.querySelector('.edit-filename');
 
-    fileInput.value = ''; // Clear the file input
-    fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 2MB)';
-    removeButton.style.display = 'none';
-}
+        fileInput.value = ''; // Clear the file input
+        fileNameSpan.textContent = 'Choose File (pdf, doc, docx, up to 1MB)';
+        fileNameInput.style.display = 'none';
+        fileNameSpan.style.display = 'inline';
+        removeButton.style.display = 'none';
+        editButton.style.display = 'none';
+    }
 
+    function toggleFilenameEdit(editButton) {
+        const row = editButton.closest('tr');
+        const fileNameSpan = row.querySelector('.file-name');
+        const fileNameInput = row.querySelector('.file-name-input');
+
+        if (fileNameInput.style.display === 'none') {
+            fileNameInput.style.display = 'inline-block';
+            fileNameSpan.style.display = 'none';
+            fileNameInput.focus();
+            editButton.textContent = 'Save';
+        } else {
+            updateFilename(fileNameInput);
+        }
+    }
+
+    function updateFilename(input) {
+        const row = input.closest('tr');
+        const fileNameSpan = row.querySelector('.file-name');
+        const editButton = row.querySelector('.edit-filename');
+
+        fileNameSpan.textContent = input.value;
+        input.style.display = 'none';
+        fileNameSpan.style.display = 'inline';
+        editButton.textContent = 'Edit';
+    }
 // Initialize the form
 showSection('personal');
 
@@ -257,3 +313,86 @@ document.getElementById('mobileNumber').addEventListener('input', () => {
         }
     }
 });
+    let registrationCount = 0;
+        let employmentCount = 0;
+
+        function addRegistration() {
+            registrationCount++;
+            const fields = document.createElement('div');
+            fields.className = 'dynamic-fields';
+            
+            if (registrationCount > 1) {
+                fields.innerHTML = `
+                    <div class="form-group full-width">
+                        <select>
+                            <option value="">Select Registration Council</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="date-inputs">
+                        <div class="form-group">
+                            <label for="fromDate${registrationCount}">From</label>
+                            <input type="date" id="fromDate${registrationCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="toDate${registrationCount}">To</label>
+                            <input type="date" id="toDate${registrationCount}">
+                        </div>
+                    </div>
+                `;
+            } else {
+                fields.innerHTML = `
+                    <div class="date-inputs">
+                        <div class="form-group">
+                            <label for="fromDate${registrationCount}">From</label>
+                            <input type="date" id="fromDate${registrationCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="toDate${registrationCount}">To</label>
+                            <input type="date" id="toDate${registrationCount}">
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('registrationFields').appendChild(fields);
+        }
+
+        function addEmployment() {
+            employmentCount++;
+            const fields = document.createElement('div');
+            fields.className = 'dynamic-fields';
+            
+            if (employmentCount > 1) {
+                fields.innerHTML = `
+                    <div class="form-group full-width">
+                        <input type="text" placeholder="Enter Employer Name">
+                    </div>
+                    <div class="date-inputs">
+                        <div class="form-group">
+                            <label for="empFromDate${employmentCount}">From</label>
+                            <input type="date" id="empFromDate${employmentCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="empToDate${employmentCount}">To</label>
+                            <input type="date" id="empToDate${employmentCount}">
+                        </div>
+                    </div>
+                `;
+            } else {
+                fields.innerHTML = `
+                    <div class="date-inputs">
+                        <div class="form-group">
+                            <label for="empFromDate${employmentCount}">From</label>
+                            <input type="date" id="empFromDate${employmentCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="empToDate${employmentCount}">To</label>
+                            <input type="date" id="empToDate${employmentCount}">
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('employmentFields').appendChild(fields);
+        }

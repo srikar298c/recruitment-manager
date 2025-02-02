@@ -271,13 +271,20 @@
                         </div>
                         <div class="form-container">
                             <div class="form-step">
-                                <div class="form-group">
+                                <div class="form-group full-width">
                                     <label for="registrationCouncil">Current Registration Council*</label>
                                     <select id="registrationCouncil" required>
                                         <option value="">Select</option>
                                         <!-- Add options here -->
                                     </select>
-                                    <button type="button" class="add-button">+ Add Registration</button>
+                                    <button type="button" class="add-button" onclick="addRegistration()">+ Add Registration</button>
+                                    <div id="registrationFields"></div>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="employerName">Latest Employer Name</label>
+                                    <input type="text" id="employerName" placeholder="Enter the Hospital name">
+                                    <button type="button" class="add-button" onclick="addEmployment()">+ Add Employment</button>
+                                    <div id="employmentFields"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="department">Department</label>
@@ -286,12 +293,7 @@
                                         <!-- Add options here -->
                                     </select>
                                 </div>
-                                <div class="form-group full-width">
-                                    <label for="employerName">Latest Employer Name</label>
-                                    <input type="text" id="employerName" placeholder="Enter the Hospital name">
-                                    <button type="button" class="add-button">+ Add Employment</button>
-                                </div>
-                              <div class="">
+                              <div class="date-group">
                                     <div class="form-group">
                                         <label for="fromDate">From</label>
                                         <input type="date" id="fromDate">
@@ -300,11 +302,14 @@
                                         <label for="toDate">To</label>
                                         <input type="date" id="toDate">
                                     </div>
+                                    <div class="form-group">
                             <div class="checkbox-wrapper">
                                 <input type="checkbox" id="presentCheck">
                                 <label for="presentCheck">Present</label>
                             </div>
-</div>
+                        </div>
+                              </div>
+
                                 <div class="form-group full-width">
                                     <label for="preferredCountry">Preferred Country of Work</label>
                                     <input type="text" id="preferredCountry" placeholder="Enter your Preferred Country">
@@ -317,117 +322,143 @@
                                 <h2>Documents</h2>
                             </div>
                             <div class="form-container">
-                                <table class="document-table">
-                                 
-                                    <tr>
-                                        <td>Curriculum Vitae (CV)*</td>
-                                        <td class="file-input">
-                                            <input type="file" id="cv-file" accept=".pdf,.doc,.docx" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Curriculum Vitae">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Curriculum Vitae">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Passport</td>
-                                        <td class="file-input">
-                                            <input type="file" id="passport-file" accept=".pdf" style="display: none;">
-                                        <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                        <button type="button" class="remove-file" style="display: none;">X</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Passport">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Passport">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Degree</td>
-                                        <td class="file-input">
-                                            <input type="file" id="degree-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Degree">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Degree">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Transactions</td>
-                                        <td class="file-input">
-                                            <input type="file" id="transaction-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Transactions">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Transactions">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Registration</td>
-                                        <td class="file-input">
-                                            <input type="file" id="registration-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Registrations">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Registrations">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Work Experience</td>
-                                        <td class="file-input">
-                                            <input type="file" id="cv-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Work Experience">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Work Experience">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>DataFlow</td>
-                                        <td class="file-input">
-                                            <input type="file" id="dataflow-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="DataFlow">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="DataFlow">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Prometric/DHA</td>
-                                        <td class="file-input">
-                                            <input type="file" id="prometric-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Prometric/DHA">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Prometric/DHA">Add More</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Others(if any)</td>
-                                        <td class="file-input">
-                                            <input type="file" id="others-file" accept=".pdf" style="display: none;">
-                                            <span class="file-name">Choose File( pdf or document, upto 2MB)</span>
-                                            <button type="button" class="remove-file" style="display: none;">X</button>
-                                            </td>
-                                        <td>
-                                            <button type="button" class="upload-btn" data-document="Others">Upload</button>
-                                            <button type="button" class="add-more-btn" data-document="Others">Add More</button>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <table class="document-table">
+                                <tr data-document="Curriculum Vitae">
+                                    <td>Curriculum Vitae (CV)*</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Curriculum Vitae">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Curriculum Vitae">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Passport">
+                                    <td>Passport</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Passport">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Passport">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Degree">
+                                    <td>Degree</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Degree">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Degree">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Transactions">
+                                    <td>Transactions</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Transactions">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Transactions">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Registration">
+                                    <td>Registration</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Registration">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Registration">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Work Experience">
+                                    <td>Work Experience</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Work Experience">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Work Experience">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="DataFlow">
+                                    <td>DataFlow</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="DataFlow">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="DataFlow">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Prometric/DHA">
+                                    <td>Prometric/DHA</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Prometric/DHA">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Prometric/DHA">Add More</button>
+                                    </td>
+                                </tr>
+                            
+                                <tr data-document="Others">
+                                    <td>Others (if any)</td>
+                                    <td class="file-input">
+                                        <input type="file" accept=".pdf,.doc,.docx">
+                                        <span class="file-name">Choose File (pdf or document, up to 1MB)</span>
+                                        <input type="text" class="file-name-input">
+                                        <button type="button" class="btn edit-filename">Edit</button>
+                                        <button type="button" class="btn remove-file">X</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn upload-btn" data-document="Others">Upload</button>
+                                        <button type="button" class="btn add-more-btn" data-document="Others">Add More</button>
+                                    </td>
+                                </tr>
+                            </table>
+
                             </div>
                         </section>
                         <section id="review" class="form-section" style="display: none;">
@@ -440,20 +471,19 @@
                                         <label for="name">Name</label>
                                         <input type="text" id="name" name="name" required>
                                     </div>
-                                    <div class="form-group radio">
+                                <div class="form-group radio">
+                                    <div class="radio-group">
                                         <label for="gender">Gender</label>
-                                        <div class="radio-group">
-                                            <div class="radio-option">
-                                                <input type="radio" id="male" name="gender" value="male">
-                                                <label for="single">Male</label>
-                                            </div>
-                                            <div class="radio-option">
-                                                <input type="radio" id="female" name="gender" value="female">
-                                                <label for="married">Female</label>
-                                            </div>
-                                
+                                        <div class="radio-option">
+                                            <input type="radio" id="male" name="gender" value="male">
+                                            <label for="single">Male</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="female" name="gender" value="female">
+                                            <label for="married">Female</label>
                                         </div>
                                     </div>
+                                </div>
                                     <div class="form-group">
                                         <label for="mobile">Mobile</label>
                                         <input type="tel" id="mobile" name="mobile" required>
@@ -474,15 +504,26 @@
                                         <label for="nationality">Nationality</label>
                                         <input type="text" id="nationality" name="nationality" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="maritalStatus">Marital Status</label>
-                                        <select id="maritalStatus" name="maritalStatus" required>
-                                            <option value="">Select</option>
-                                            <option value="single">Single</option>
-                                            <option value="married">Married</option>
-                                            <option value="divorced">Divorced</option>
-                                            <option value="widowed">Widowed</option>
-                                        </select>
+                                    <div class="form-group  ">
+                                        <div class="radio-group">
+                                            <label>Marital Status</label>
+                                            <div class="radio-option">
+                                                <input type="radio" id="single" name="maritalStatus" value="single">
+                                                <label for="single">Single</label>
+                                            </div>
+                                            <div class="radio-option">
+                                                <input type="radio" id="married" name="maritalStatus" value="married">
+                                                <label for="married">Married</label>
+                                            </div>
+                                            <div class="radio-option">
+                                                <input type="radio" id="divorced" name="maritalStatus" value="divorced">
+                                                <label for="divorced">Divorced</label>
+                                            </div>
+                                            <div class="radio-option">
+                                                <input type="radio" id="widowed" name="maritalStatus" value="widowed">
+                                                <label for="widowed">Widowed</label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="highestDegree">Highest Degree</label>

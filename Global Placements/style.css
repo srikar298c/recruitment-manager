@@ -515,7 +515,11 @@ padding: 5px;
     margin-bottom: 20px;
 }
   
-
+.date-group{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+}
 .phone-inputs {
   display: flex;
   flex-direction: column;
