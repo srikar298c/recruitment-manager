@@ -34,7 +34,7 @@ function renderTable(data) {
     data.forEach(candidate => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td><input type="radio" name="select-candidate"></td>
+         
             <td>${candidate.name}</td>
             <td>${candidate.phone}</td>
             <td>${candidate.project}</td>

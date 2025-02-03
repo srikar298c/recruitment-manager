@@ -70,31 +70,43 @@
                     <h1>Submissions</h1>
                 </div>
             </div>
-            <div class="filter-container">
+        <div class="filter-container">
             <div class="filter-group">
                 <label for="countryFilter">Project Name</label>
                 <select id="countryFilter">
                     <option value="">All Project</option>
                 </select>
             </div>
-            
+        
             <div class="filter-group">
-                <label for="statusFilter">Client </label>
-                <select id="statusFilter">
+                <label for="clientFilter">Client</label>
+                <select id="clientFilter">
                     <option value="">Client Name</option>
                 </select>
             </div>
+        
             <div class="filter-group">
-                <label for="statusFilter">Client Status:</label>
-                <select id="statusFilter">
+                <label for="clientStatusFilter">Client Status:</label>
+                <select id="clientStatusFilter">
                     <option value="">Status</option>
                 </select>
             </div>
+        
+            <div class="filter-group">
+                <label for="dateFilter">Select Date:</label>
+                <input type="date" id="dateFilter">
+            </div>
+        
+            <div class="filter-group">
+                <label for="keywordFilter">Search:</label>
+                <input type="text" id="keywordFilter" placeholder="Enter keyword">
+            </div>
         </div>
+
             <table id="candidateTable">
                 <thead>
                     <tr>
-                        <th></th>
+                        
                         <th>Name</th>
                         <th>Phone</th>
                         <th class="sortable" data-sort="project"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M13.78 10.47a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l.97.97V5.75a.75.75 0 0 1 1.5 0v5.69l.97-.97a.75.75 0 0 1 1.06 0M2.22 5.53a.75.75 0 0 1 0-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1-1.06 1.06l-.97-.97v5.69a.75.75 0 0 1-1.5 0V4.56l-.97.97a.75.75 0 0 1-1.06 0" clip-rule="evenodd"/></svg>Project Name</th>
